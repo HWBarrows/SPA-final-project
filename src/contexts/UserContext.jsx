@@ -21,7 +21,7 @@ export function UsersContextProvider (props) {
             
     }, [])
     
-    
+    console.log(users);
     return(
         <UserContext.Provider value = {[users, setUsers]}>
             {props.children}
