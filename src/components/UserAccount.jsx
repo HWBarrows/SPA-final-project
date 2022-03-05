@@ -13,7 +13,7 @@ export default function UserAccount(){
     
 //filter and then return : 
 // login, email, picture, registered.age > 18
-    console.log(users)
+    // console.log(users)
     return (
         <div>
             <div className="profile">
