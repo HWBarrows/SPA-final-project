@@ -20,6 +20,8 @@ export default function UserAccount(){
                 {/* {users.map(user => 
                     <p>{user.login.username}, {user.email}</p>
                 )} */}
+
+                PROFILE
             </div>
             
                
