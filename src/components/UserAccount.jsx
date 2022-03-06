@@ -24,7 +24,7 @@ export default function UserAccount() {
                     <h3>{profile.name.first} {profile.name.last}</h3>
                     <p>{profile.login.username}</p>
                     <p>{profile.email}</p>
-                    
+                    <button>Log out</button>
                 </div>}
              </div>
          )
