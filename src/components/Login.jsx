@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { FaEye } from 'react-icons/fa'
-import UserAccount from "./UserAccount.jsx"
+
 
 export default function Login (){
 
@@ -14,7 +14,7 @@ export default function Login (){
             <input type="text" placeholder="Type your user name here"></input>
             <input type={show? "text" : "password"} placeholder="Type your password here"></input>
             <FaEye onMouseDown={()=> setShow(!show)}/>
-            <UserAccount/>
+            
         </div>
     )
 }
