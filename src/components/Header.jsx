@@ -20,7 +20,7 @@ export default function Header () {
         
         <div>
             Hi from Header
-            {profile ? <button>Log out</button> : <Login/>}   
+            {profile ? <button onClick={()=> { setProfile(false) } }>Log out</button> : <Login/>}   
         </div>
         
     )
