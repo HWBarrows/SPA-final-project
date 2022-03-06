@@ -2,3 +2,9 @@
 1. Melanie - Content styling (hard coding placeholders)
 2. Monika - Login Component (functions 1st)
 3. Hallie - Header Component & Blog content API example
+
+js
+(currentUser ? )
+do you wish to save this login profile?
+```js
+localStorage.setItem("currentUser", profile)
