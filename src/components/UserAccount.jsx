@@ -9,35 +9,23 @@ export default function UserAccount() {
     const [users, setUsers] = useContext(UserContext)
     
     
-   
-    
-    
     //this is to dynamically personalize the profile component
     const [profile] = useContext(ProfileContext)
     
     console.log(profile);
     
-   
-    
-    
-
-    //filter and then return : 
-    // login, email, picture, registered.age > 18
-    //if (testProfile.login.username) {
-
-       
-           
         
          return( 
              <div className="profile">
                 
-                <div className="userDetails">
+            {profile &&  <div className="userDetails">
                     
-                    {profile && <div className="userPhoto" style={{backgroundImage:`url(${profile.picture.large})`}}></div>}
-                    {/* {profile.map(item => {
-                    return <div><div className="userPhoto" style={{backgroundImage:`url(${item.picture.large})`}}></div>
-                    <h1>{item.login.username}</h1><p>{item.login.password}</p></div>})} */}
-                </div>
+                    <div className="userPhoto" style={{backgroundImage:`url(${profile.picture.large})`}}></div>
+                    <h3>{profile.name.first} {profile.name.last}</h3>
+                    <p>{profile.login.username}</p>
+                    <p>{profile.email}</p>
+                    
+                </div>}
              </div>
          )
                 

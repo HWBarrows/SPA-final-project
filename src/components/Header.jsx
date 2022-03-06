@@ -11,13 +11,13 @@ export default function Header () {
     const test = users.filter(item => item.login.username==="brownrabbit417")
     
     //console.log(profile)
-    setProfile(...test)
+    //setProfile(...test)
     
 
     return (
         <div>
             Hi from Header
-            <UserAccount/>
+           
             <Login/>
         </div>
     )
