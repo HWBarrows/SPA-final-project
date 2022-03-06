@@ -15,10 +15,13 @@ export default function Header () {
     
 
     return (
+        // if user is logged in show log out button, if not show log in button
+        
+        
         <div>
             Hi from Header
-           
-            <Login/>
+            {profile ? <button>Log out</button> : <Login/>}   
         </div>
+        
     )
 }
