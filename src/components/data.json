@@ -26,8 +26,8 @@
 	"email": "jaque.darocha@example.com",
 	"login": {
 		"uuid": "854b2222-0d41-443f-9f3c-5c67f6413042",
-		"username": "brownrabbit417",
-		"password": "vectra",
+		"username": "a",
+		"password": "b",
 		"salt": "b1sgro8t",
 		"md5": "bb8b356a19f8484238902205c18b9849",
 		"sha1": "7459f2b3fe164d396ee8ea14d0a0f43fec159f26",

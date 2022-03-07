@@ -15,8 +15,8 @@ export default function Login (){
     // console.log(JSON.stringify(users.slice(0,20)));    
 
     //const users = listOfUsers;
-    // console.log(users[0].login.password);
-    //console.log(users[0].login.username);
+    console.log(users[0].login.password);
+    console.log(users[0].login.username);
     
 
     function checkUserName(e){
@@ -50,7 +50,7 @@ export default function Login (){
             <input onChange={checkUserName} type="text" placeholder="Type your user name here"></input>
             <input onChange={checkPassword} type={show? "text" : "password"} placeholder="Type your password here"></input>
             <FaEye onMouseDown={()=> setShow(!show)}/>
-            <button type='submit' onClick={submitLogin}>Submit</button>    
+            <button type='submit' onClick={submitLogin}>Log in</button>    
         </div>}   
         </>
     )
