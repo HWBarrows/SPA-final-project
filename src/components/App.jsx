@@ -12,7 +12,7 @@ export default function App() {
     return (
             <UsersContextProvider>
                 <ProfileContextProvider>
-            Hi from App
+            
             <Header />
             <Blog/>
             <Sidebar/>

@@ -1,27 +1,28 @@
 import React, { useState, useEffect }from "react";
-
-export const UserContext = React.createContext();
+export const UserContext = React.createContext()
+import userObject from '../components/data.json'
 
 
 
 
 export function UsersContextProvider (props) {
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState(userObject)
     
+    //setUsers(userObject)
 
     useEffect(function() {
        
         
-        fetch("https://randomuser.me/api/?results=5000")
+        fetch("https://randomuser.me/api/?results=50")
             .then(response => response.json())
-            .then(response => {
-                setUsers(response.results)
-            })
+            // .then(response => {
+            //     setUsers(response.results)
+            // })
             
             
     }, [])
     
-    console.log(users);
+   
     return(
         <UserContext.Provider value = {[users, setUsers]}>
             {props.children}
