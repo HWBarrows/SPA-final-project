@@ -21,6 +21,7 @@ export default function Header () {
         <div>
             Hi from Header
             {profile ? <button onClick={()=> { setProfile(false) } }>Log out</button> : <Login/>}   
+            <UserAccount/>
         </div>
         
     )

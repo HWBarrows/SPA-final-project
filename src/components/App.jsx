@@ -15,7 +15,7 @@ export default function App() {
                 <ProfileContextProvider>
                     <Header />
                     <Blog/>
-                    <FriendList />
+                    <FriendList/>
                     <Sidebar/>
                     <MoreCont/>
                     <Footer/>

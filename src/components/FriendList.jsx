@@ -7,19 +7,20 @@ const FriendList = () => {
     const [profile] = useContext(ProfileContext)
  
     const friends = users.sort(() => Math.random() - Math.random()).slice(0, 5)
+    console.log(friends);
    
     return (
 
         <>
-        {profile ? <div> 
+        hi from friends
+        {profile && <div> 
                         <p>FriendList</p>
                         <ul>
                         {friends.map((friend,i )=> <li key={i}> <img src= { friend.picture.thumbnail }/>  {friend.name.first} {friend.name.last} </li>)}
                         </ul>
         
-                    </div>
-                    :
-                    <div />}
+                    </div>}
+                    
         </>
     )
 }
