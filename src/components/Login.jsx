@@ -30,10 +30,17 @@ export default function Login (){
     function submitLogin(e){
         
         e.preventDefault()
+
+        //Can use to confirm checkIfUserExist is truly empty
+        //if (array[index] != null) {
+        // The == and != operators consider null equal to only null or undefined
+        //}
+          
       
         const checkIfUserExist = users.filter(user => (user.login.username === data.userName) && (user.login.password === data.password))
         checkIfUserExist.length>0 && setProfile(...checkIfUserExist)
         checkIfUserExist && setIsLoggedIn(true)
+        
     }
 
     return (
