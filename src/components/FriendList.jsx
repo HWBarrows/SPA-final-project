@@ -12,9 +12,9 @@ const FriendList = () => {
     return (
 
         <>
-        hi from friends
-        {profile && <div> 
-                        <p>FriendList</p>
+        
+        {profile && <div className='friends'> 
+                        <p>Besties</p>
                         <ul>
                         {friends.map((friend,i )=> <li key={i}> <img src= { friend.picture.thumbnail }/>  {friend.name.first} {friend.name.last} </li>)}
                         </ul>

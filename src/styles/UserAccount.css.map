@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAA;EACN,MAAM,EAAE,KAAK;EACb,KAAK,EAAC,KAAK;EACX,eAAe,EAAE,KAAK;CACzB",
+    "sources": [
+        "UserAccount.scss"
+    ],
+    "names": [],
+    "file": "UserAccount.css"
+}

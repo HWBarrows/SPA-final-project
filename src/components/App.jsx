@@ -6,6 +6,7 @@ import FriendList from './FriendList.jsx'
 import Footer from './Footer.jsx'
 import { UsersContextProvider } from '../contexts/UserContext.jsx'
 import { ProfileContextProvider } from '../contexts/ProfileContext.jsx'
+import '../styles/App.scss'
 
 
 
@@ -15,7 +16,7 @@ export default function App() {
                 <ProfileContextProvider>
                     <Header />
                     <Blog/>
-                    <FriendList/>
+                    {/* <FriendList/> */}
                     <Sidebar/>
                     <MoreCont/>
                     <Footer/>

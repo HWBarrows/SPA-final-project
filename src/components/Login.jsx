@@ -12,6 +12,7 @@ export default function Login (){
     const [users, setUsers] = useContext(UserContext)
     const [ data, setData ] = useState({userName:"", password:""})
     const [profile, setProfile] = useContext(ProfileContext)
+    const [loginAttempt, setLoginAttempt] = useState(false)
     // console.log(JSON.stringify(users.slice(0,20)));    
 
     //const users = listOfUsers;
@@ -35,23 +36,26 @@ export default function Login (){
         //if (array[index] != null) {
         // The == and != operators consider null equal to only null or undefined
         //}
-          
-      
+    
         const checkIfUserExist = users.filter(user => (user.login.username === data.userName) && (user.login.password === data.password))
-        checkIfUserExist.length>0 && setProfile(...checkIfUserExist)
-        checkIfUserExist && setIsLoggedIn(true)
+        checkIfUserExist[0]!=null && setProfile(...checkIfUserExist)
+        checkIfUserExist[0]!=null && setIsLoggedIn(true)
+        checkIfUserExist[0] == null && setLoginAttempt(true)
+        console.log(checkIfUserExist);
+        
         
     }
 
     return (
-        <>
+        <div className="loginWrapper">
         {isLoggedIn ? <UserAccount/> : <div className="Login">
-            Hi from Login
+            
             <input onChange={checkUserName} type="text" placeholder="Type your user name here"></input>
             <input onChange={checkPassword} type={show? "text" : "password"} placeholder="Type your password here"></input>
             <FaEye onMouseDown={()=> setShow(!show)}/>
-            <button type='submit' onClick={submitLogin}>Log in</button>    
-        </div>}   
-        </>
+           
+            <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>    
+        </div>}  
+        </div>
     )
 }
