@@ -6,17 +6,3 @@
     1. User Account created
     2. Blog example Api created
     3. Nav links and routing
-<<<<<<< HEAD
-=======
-    
-
-
-
-
-
-js
-(currentUser ? )
-do you wish to save this login profile?
-```js
-localStorage.setItem("currentUser", profile)
->>>>>>> hallie
