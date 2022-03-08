@@ -15,7 +15,8 @@ export default function Login (){
     const [loginAttempt, setLoginAttempt] = useState(false)
     // console.log(JSON.stringify(users.slice(0,20)));    
 
-    //const users = listOfUsers;
+    console.log(users);
+    //setUsers(...users, {test:"user"})
     console.log(users[0].login.password);
     console.log(users[0].login.username);
     
