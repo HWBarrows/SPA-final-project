@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
-
 import { FaEye } from "react-icons/fa";
 import UserAccount from "./UserAccount";
 import { ProfileContext } from "../contexts/ProfileContext";

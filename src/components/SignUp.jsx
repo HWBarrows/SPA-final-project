@@ -1,18 +1,9 @@
 import React, { useState, useContext } from 'react'
-import { ProfileContext } from '../contexts/ProfileContext'
 import { UserContext } from '../contexts/UserContext'
 
-const SignUp = ({setShowSignUpForm}) => {
-
-    // const [ show, setShow ] = useState(false) 
-    // const [isLoggedIn, setIsLoggedIn] = useState(false)
+const SignUp = ({setShowSignUpForm}) => {  
     const [users, setUsers] = useContext(UserContext)
     const [ data, setData ] = useState({})
-    // const [profile, setProfile] = useContext(ProfileContext)
-    // const [loginAttempt, setLoginAttempt] = useState(false)
-
-
-
     
     function signUp(e){
         // take in the new username and password in a new-user object, and create a new user profile. 
@@ -39,15 +30,13 @@ const SignUp = ({setShowSignUpForm}) => {
                             }
                             ])
         setShowSignUpForm(false)
-
-        
-                    
+               
     }
 
     
 
   return (
-    <div>
+    <div className='registrationForm'>
         <input onChange={(e)=>{setData({ ...data, firstName: e.target.value })}} type="text" placeholder='first name' />
         <input  onChange={(e)=>{setData({ ...data, lastName: e.target.value })}}  type="text" placeholder='last name' />
         <input  onChange={(e)=>{setData({ ...data, dateOfBirth: e.target.value })}}  type="date" placeholder='date of birth' />
@@ -55,6 +44,7 @@ const SignUp = ({setShowSignUpForm}) => {
         <input onChange={(e)=>{setData({ ...data, username: e.target.value })}}  type="text" placeholder='username' />
         <input  onChange={(e)=>{setData({ ...data, password: e.target.value })}} type="password" placeholder='password' />
         <button type="submit" onClick={signUp}>sign up</button>
+        <button onClick={()=>setShowSignUpForm(false)}>Back</button>
     </div>
   )
 }
