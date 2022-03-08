@@ -7,7 +7,7 @@ const FriendList = () => {
     const [profile] = useContext(ProfileContext)
  
     const friends = users.sort(() => Math.random() - Math.random()).slice(0, 5)
-    console.log(friends);
+    // console.log(friends);
    
     return (
 

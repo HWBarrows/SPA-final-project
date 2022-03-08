@@ -12,7 +12,7 @@ export default function UserAccount() {
     //this is to dynamically personalize the profile component
     const [profile] = useContext(ProfileContext)
     
-    console.log(profile);
+    // console.log(profile);
     
         
          return( 

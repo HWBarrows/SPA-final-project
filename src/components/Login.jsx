@@ -15,10 +15,10 @@ export default function Login (){
     const [loginAttempt, setLoginAttempt] = useState(false)
     // console.log(JSON.stringify(users.slice(0,20)));    
 
-    console.log(users);
+    // console.log(users);
     //setUsers(...users, {test:"user"})
-    console.log(users[0].login.password);
-    console.log(users[0].login.username);
+    // console.log(users[0].login.password);
+    // console.log(users[0].login.username);
     
 
     function checkUserName(e){
@@ -28,7 +28,7 @@ export default function Login (){
     function checkPassword(e){
         setData({...data,password:e.target.value})    
     }
-    console.log(data);
+
     function submitLogin(e){
         
         e.preventDefault()
@@ -47,6 +47,30 @@ export default function Login (){
         
     }
 
+    function signUp(){
+        // take in the new username and password in a new-user object, and create a new user profile. 
+        // console.log(users);
+        console.log(data);
+        setUsers([...users, {"login":
+                                {"username":data.userName, "password":data.password}, 
+                                "name": {
+                                    "title": "",
+                                    "first": "",
+                                    "last": ""
+                                },
+                                    "email": "",
+                            
+                                "picture": 
+                                    {"medium":"http://www.formasdigitales.mx/images/client.png",
+                                    "large":"http://www.formasdigitales.mx/images/client.png",
+                                    "thumbnail":"http://www.formasdigitales.mx/images/client.png"
+                                    }
+                            }
+                            ])
+        
+
+    }
+
     return (
         <div className="loginWrapper">
         {isLoggedIn ? <UserAccount/> : <div className="Login">
@@ -55,7 +79,11 @@ export default function Login (){
             <input onChange={checkPassword} type={show? "text" : "password"} placeholder="Type your password here"></input>
             <FaEye onMouseDown={()=> setShow(!show)}/>
            
-            <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>    
+            {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
+            <button type='submit' onClick={submitLogin}>Log in</button>   
+            <button type='submit' onClick={signUp}>Sign Up</button>   
+
+
         </div>}  
         </div>
     )
