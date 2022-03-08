@@ -1,13 +1,31 @@
 import { useState } from 'react'
-import NewsApi from './NewsApiTest.jsx'
+import { Link } from 'react-router-dom';
+import {fashionArticles} from './fashionNews.js'
+import '../styles/Blog.scss'
+// import NewsApi from './NewsApiTest.jsx'
 
-
+console.log(fashionArticles);
 export default function Blog (){
+
+    const [ posts, setPosts ] = useState(4)
+    const [ displayPost, setDisplayPost ] = useState("")
+    const postLimit = fashionArticles.filter((item, index)=> index <= posts)
+    const currentArticle = postLimit.filter(item=> item.title === displayPost)
+    console.log(postLimit);
+    console.log(currentArticle);
 
     return(
         <div>
-            Hi from Blog
-            <NewsApi/>
+            <ul>
+            {postLimit.map(article => <li onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}</ul>
+            {/* <NewsApi/> */}
+           {currentArticle[0] != null &&  <div className='blogWrapper'>
+                                        <div className='blogPhoto' style={{backgroundImage:`url(${currentArticle[0].urlToImage})`}}></div>
+                                        <div className='blogText'>
+                                        <h3>{currentArticle[0].title}</h3>
+                                        <p>{currentArticle[0].content}</p>
+                                        </div>
+            </div>}
         </div>
     )
 }
