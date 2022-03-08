@@ -1,5 +1,6 @@
 import { useContext, useState } from "react"
 import { UserContext } from "../contexts/UserContext"
+import Fakerator from "fakerator"
 import { FaEye } from 'react-icons/fa'
 import UserAccount from "./UserAccount"
 import { ProfileContext } from "../contexts/ProfileContext"
@@ -19,6 +20,7 @@ export default function Login (){
     //setUsers(...users, {test:"user"})
     // console.log(users[0].login.password);
     // console.log(users[0].login.username);
+    
     
 
     function checkUserName(e){
@@ -50,15 +52,18 @@ export default function Login (){
     function signUp(){
         // take in the new username and password in a new-user object, and create a new user profile. 
         // console.log(users);
+        const randomFirstName = Fakerator().names.firstName()
+        const randomLastName = Fakerator().names.lastName()
+        const randomEmail = Fakerator().internet.email(randomFirstName, randomLastName)
+
         console.log(data);
         setUsers([...users, {"login":
                                 {"username":data.userName, "password":data.password}, 
                                 "name": {
-                                    "title": "",
-                                    "first": "",
-                                    "last": ""
+                                    "first": randomFirstName,
+                                    "last": randomLastName
                                 },
-                                    "email": "",
+                                    "email": randomEmail,
                             
                                 "picture": 
                                     {"medium":"http://www.formasdigitales.mx/images/client.png",
