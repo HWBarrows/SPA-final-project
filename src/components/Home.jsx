@@ -8,7 +8,7 @@ export default function Home (){
             <nav>
                 <ul>
                     <li><NavLink to="blog">Blog</NavLink></li>
-                    <li><NavLink to="userInfo">Account</NavLink></li>
+                    <li><NavLink to="userInfo">User Account</NavLink></li>
                     <li><NavLink to="moreContent">More Content</NavLink></li>
                 </ul>
             </nav>
