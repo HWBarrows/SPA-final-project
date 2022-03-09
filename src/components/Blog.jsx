@@ -8,11 +8,12 @@ console.log(fashionArticles);
 export default function Blog (){
 
     const [ posts, setPosts ] = useState(4)
-    const [ displayPost, setDisplayPost ] = useState("")
+    const [ displayPost, setDisplayPost ] = useState("A Digital Archive of Black Fashion Delves Into Print")
     const postLimit = fashionArticles.filter((item, index)=> index <= posts)
     const currentArticle = postLimit.filter(item=> item.title === displayPost)
-    console.log(postLimit);
-    console.log(currentArticle);
+    // console.log(postLimit);
+    // console.log(currentArticle);
+    // console.log(displayPost);
 
     return(
         <div>
