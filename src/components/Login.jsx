@@ -5,6 +5,7 @@ import UserAccount from "./UserAccount";
 import { ProfileContext } from "../contexts/ProfileContext";
 import { NavLink } from "react-router-dom";
 import SignUp from "./SignUp";
+import "../styles/Login.scss";
 
 export default function Login() {
   const [show, setShow] = useState(false);
@@ -48,7 +49,6 @@ export default function Login() {
     // console.log(checkIfUserExist);
   }
 
-
   return (
     <div className="loginWrapper">
       {(() => {
@@ -60,28 +60,40 @@ export default function Login() {
         }
         return (
           <div className="Login">
-            <input
-              onChange={checkUserName}
-              type="text"
-              placeholder="Type your user name here"
-            ></input>
+            <div className="imgWrapper"></div>
 
-            <input
-              onChange={checkPassword}
-              type={show ? "text" : "password"}
-              placeholder="Type your password here"
-            ></input>
-            <FaEye onMouseDown={() => setShow(!show)} />
+            <div className="loginForm">
+              <h2>Log In</h2>
+              <div>
+                <input
+                  onChange={checkUserName}
+                  type="text"
+                  placeholder="Type your user name here"
+                ></input>
+              </div>
 
-            {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
-            <button type="submit" onClick={submitLogin}>
-              Log in
-            </button>
+              <div className="passwordField">
+                <input
+                  onChange={checkPassword}
+                  type={show ? "text" : "password"}
+                  placeholder="Type your password here"
+                ></input>
+                <FaEye onMouseDown={() => setShow(!show)} />
+              </div>
 
-            <a onClick={() => setShowSignUpForm(true)}>
-              {" "}
-              New User? Sign up here{" "}
-            </a>
+              {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
+              
+                <button type="submit" onClick={submitLogin}>
+                  Log In
+                </button>
+              
+
+                <a style={{color:"#eea058", fontWeight: "bold"}} onClick={() => setShowSignUpForm(true)}>
+                  {" "}
+                  New User? Sign up here{" "}
+                </a>
+             
+            </div>
           </div>
         );
       })()}
