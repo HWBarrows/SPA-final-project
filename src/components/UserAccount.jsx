@@ -12,7 +12,7 @@ export default function UserAccount() {
     //this is to dynamically personalize the profile component
     const [profile] = useContext(ProfileContext)
     
-    console.log(profile);
+    // console.log(profile);
     
         
          return( 
@@ -24,8 +24,13 @@ export default function UserAccount() {
                     <h3>{profile.name.first} {profile.name.last}</h3>
                     <p>{profile.login.username}</p>
                     <p>{profile.email}</p>
-                    <button>Log out</button>
+                    
+                   
                 </div>}
+
+            {/* {!profile && <div className="registration">
+                <p>Please sign In</p>
+                </div>} */}
              </div>
          )
                 
