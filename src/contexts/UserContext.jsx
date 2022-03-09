@@ -1,16 +1,14 @@
 import React, { useState, useEffect }from "react";
 export const UserContext = React.createContext()
-import userObject from '../components/data.json'
+import userObject from '../dataSources/data.json'
 
 
 
 
 export function UsersContextProvider (props) {
-    const editedUsers = userObject.filter((item, index)=> index <11)
-    console.log(editedUsers);
 
     const [users, setUsers] = useState(userObject)
-    console.log(users);
+    //console.log(users);
     
     //setUsers(userObject)
 

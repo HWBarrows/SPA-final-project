@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
-import {fashionArticles} from './fashionNews.js'
+import {fashionArticles} from '../dataSources/fashionNews.js'
 import '../styles/Blog.scss'
 // import NewsApi from './NewsApiTest.jsx'
 
