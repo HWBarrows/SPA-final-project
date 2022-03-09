@@ -10,9 +10,10 @@ export default function Home (){
                     <li><NavLink to="blog">Blog</NavLink></li>
                     <li><NavLink to="userInfo">User Account</NavLink></li>
                     <li><NavLink to="moreContent">More Content</NavLink></li>
+                <OurRoutes/>
                 </ul>
             </nav>
-            <OurRoutes/>
+            
         </div>
     )
 }

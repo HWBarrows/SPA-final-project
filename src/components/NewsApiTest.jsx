@@ -7,9 +7,11 @@ export default function NewsApi (){
 
 
     useEffect(()=>{
-        fetch("https://newsapi.org/v2/everything?q=fashion&apiKey=ef21565ae0ab441ba6da78a5339213a3")
+        fetch("https://newsapi.org/v2/everything?language=en&q=skin&careNOTcancer&apiKey=ef21565ae0ab441ba6da78a5339213a3")
         .then(response => response.json())
-        .then(response=> localStorage.setItem("newsArray", JSON.stringify(response.articles)))
+        .then(response => console.log(response))
+
+        // .then(response=> localStorage.setItem("newsArray", JSON.stringify(response.articles)))
 
 
 
