@@ -18,7 +18,7 @@ export default function NewsApi (){
     //console.log(content);
     const newsData = localStorage.getItem("newsArray")
     const newjs = JSON.parse(newsData)
-    console.log(newjs);
+    // console.log(newjs);
 
     return(
         <div>Hi from News</div>

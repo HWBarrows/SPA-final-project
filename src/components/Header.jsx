@@ -9,7 +9,7 @@ import { useContext } from "react"
 export default function Header () {
     const [profile, setProfile] = useContext(ProfileContext)
     const [users] = useContext(UserContext)
-
+    // console.log(users);
     const test = users.filter(item => item.login.username==="brownrabbit417")
     
     //console.log(profile)
