@@ -33,7 +33,7 @@ const SignUp = ({setShowSignUpForm}) => {
                
     }
 
-    
+    console.log(users);
 
   return (
     <div className='registrationForm'>
