@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from "react";
 export const UserContext = React.createContext()
-import userObject from '../components/data.json'
+import userObject from '../dataSources/data.json'
 
 
 
@@ -8,7 +8,7 @@ import userObject from '../components/data.json'
 export function UsersContextProvider (props) {
 
     const [users, setUsers] = useState(userObject)
-    console.log(users);
+    //console.log(users);
     
     //setUsers(userObject)
 
