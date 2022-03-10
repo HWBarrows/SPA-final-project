@@ -49,28 +49,30 @@ const SignUp = ({showSignUpForm,setShowSignUpForm}) => {
     {isUserRegistered ? 
     
             <div className='userSignedUp'>
-            "thank you for signing up!"
+            "Thank you for signing up {data.firstName}!"
             <button className='goBackToLogin' onClick={()=>setShowSignUpForm(false)}> Go back to Login</button>
-            </div> :
+            </div> 
+            
+            :
 
             <div className='registrationForm'>
-            <div className='top'>
-                <h2>Sign Up</h2>
-            </div>
+                <div className='top'>
+                    <h2>Sign Up</h2>
+                </div>
 
-            <div className='nameInputs'>
-            <input onChange={(e)=>{setData({ ...data, firstName: e.target.value })}} type="text" placeholder='first name' />
-            <input  onChange={(e)=>{setData({ ...data, lastName: e.target.value })}}  type="text" placeholder='last name' />
-            </div>
+                <div className='nameInputs'>
+                    <input onChange={(e)=>{setData({ ...data, firstName: e.target.value })}} type="text" placeholder='first name' />
+                    <input  onChange={(e)=>{setData({ ...data, lastName: e.target.value })}}  type="text" placeholder='last name' />
+                </div>
 
-            <input  onChange={(e)=>{setData({ ...data, username: e.target.value })}}  type="text" placeholder='username' />
-            <input  onChange={(e)=>{setData({ ...data, email: e.target.value })}} type="email" placeholder='email' />
-            <input  onChange={(e)=>{setData({ ...data, password: e.target.value })}} type="password" placeholder='password' />
+                <input  onChange={(e)=>{setData({ ...data, username: e.target.value })}}  type="text" placeholder='username' />
+                <input  onChange={(e)=>{setData({ ...data, email: e.target.value })}} type="email" placeholder='email' />
+                <input  onChange={(e)=>{setData({ ...data, password: e.target.value })}} type="password" placeholder='password' />
 
-            <input  onChange={(e)=>{setData({ ...data, dateOfBirth: e.target.value })}}  type="date" placeholder='date of birth' />
+                <input  onChange={(e)=>{setData({ ...data, dateOfBirth: e.target.value })}}  type="date" placeholder='date of birth' />
 
 
-            <button className='signUpBtn' type="submit" onClick={signUp}>sign up</button>
+                <button className='signUpBtn' type="submit" onClick={signUp}>sign up</button>
 
 
             </div>
