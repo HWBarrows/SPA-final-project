@@ -13,6 +13,7 @@ import Home from './Home.jsx'
 
 export default function App() {
     return (
+        <div>
             <UsersContextProvider>
                 <ProfileContextProvider>
                     {/* Change <Header/> to home and will contain blog & sidebar*/}
@@ -25,5 +26,6 @@ export default function App() {
                     <Footer/>
                 </ProfileContextProvider>
             </UsersContextProvider>
+        </div>
     )
 }
