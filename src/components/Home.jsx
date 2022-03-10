@@ -1,19 +1,90 @@
 import { NavLink, useLocation } from "react-router-dom"
 import OurRoutes from "./OurRoutes.jsx"
+import '../styles/Home.scss'
 
-export default function Home (){
+export default function Home() {
 
-    return(
-        <div>Hi from Home
+    const homeLocation = useLocation().pathname
+    console.log(homeLocation);
+
+    //return conditional statement that renders a div of elements for landing page
+
+    if (homeLocation ==="/home") {
+    return (
+        <div className="homeWrapper">
+            {/* <h1><NavLink to="home">Welcome home</NavLink></h1> */}
             <nav>
-                <ul>
+                <div className="navWrapper">
+                <h1><NavLink to="home">Welcome home</NavLink></h1>
+                <ul className="landingList">
                     <li><NavLink to="blog">Blog</NavLink></li>
-                    <li><NavLink to="userInfo">User Account</NavLink></li>
                     <li><NavLink to="moreContent">More Content</NavLink></li>
-                <OurRoutes/>
+                    <li><NavLink to="userInfo">User Account</NavLink></li>
                 </ul>
+                
+                <OurRoutes />
+                </div>
             </nav>
+            <div className="flexContainer">
+                <div className="banner">
+                    <div className="bannerPhoto"></div>
+                    <div className="bannerText">
+                    <h1>Lorem ipsum dolor sit amet.</h1>  
+                    <p>Chupa chups liquorice soufflé lollipop croissant marshmallow. Carrot cake jelly chupa chups donut lemon drops. Croissant candy bear claw dessert oat cake cupcake pudding donut danish.</p>  
+                    </div>
+                </div>
+
+                <div className="sidebar">
+                    <div className="cute">
+                        <div className="cutePhoto"></div>
+                        <div className="cuteText">
+                        <h3>Eye Bleach</h3>
+                        <p>Cuteness overload, all day long</p>
+                        </div>
+                    </div>
+                    <div className="advice">
+                        <div className="advicePhoto"></div>
+                        <div className="adviceText">
+                        <h3>Lorem ipsum dolor sit amet.</h3>  
+                        <p>Chupa chups liquorice soufflé lollipop croissant marshmallow.</p>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <div className="mergeContainers">
+                        <div className="moreCont">
+                            <div className="morePhoto"></div>
+                            <div className="moreText"></div>
+                        </div>
+                        <div className="moreCont">
+                            <div className="morePhoto"></div>
+                            <div className="moreText"></div>
+                        </div>
+                        <div className="moreCont">
+                            <div className="morePhoto"></div>
+                            <div className="moreText"></div>    
+                        </div>
+                    </div>
+                
             
         </div>
     )
+    } else {
+        return (
+            <div className="pageWrapper">
+            <nav>
+                <div className="navWrapper">
+                <h1><NavLink to="home">Welcome home</NavLink></h1>
+                <ul className="landingList">
+                    <li><NavLink to="blog">Blog</NavLink></li>
+                    <li><NavLink to="moreContent">More Content</NavLink></li>
+                    <li><NavLink to="userInfo">User Account</NavLink></li>
+                </ul>
+                
+                <OurRoutes />
+                </div>
+            </nav>    
+            </div>
+        )
+    }
 }

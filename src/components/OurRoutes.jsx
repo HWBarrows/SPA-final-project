@@ -10,6 +10,7 @@ export default function OurRoutes(){
     return (
         <Routes>
             <Route index element={<div />}/>
+            <Route path="home" element={<div />}/>
             <Route path="blog" element={<Blog/>}/>
             <Route path="userInfo" element={<Header/>}/>
             <Route path="moreContent" element={<MoreCont/>}/>
