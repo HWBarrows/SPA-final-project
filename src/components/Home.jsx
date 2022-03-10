@@ -45,8 +45,8 @@ export default function Home() {
                     <div className="advice">
                         <div className="advicePhoto"></div>
                         <div className="adviceText">
-                        <h3>Lorem ipsum dolor sit amet.</h3>  
-                        <p>Chupa chups liquorice soufflé lollipop croissant marshmallow.</p>  
+                        <h3>Ask an Auntie</h3>  
+                        <p>Real answers to life's questions</p>  
                         </div>
                     </div>
                 </div>
