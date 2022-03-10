@@ -49,6 +49,8 @@ export default function Login() {
     // console.log(checkIfUserExist);
   }
 
+  console.log(users);
+
   return (
     // <div className="loginWrapper">
      <>
