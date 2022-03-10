@@ -1,22 +1,10 @@
-.loginWrapper{
-    height: 60vh;
-    // height: 80vh;
-    width: 70vw;
-    // border-radius: 1%;
-    
-    // border: 3px solid yellowgreen;
-    background-color: #e9fbff;
-    color: rgb(88, 86, 86);
-    color: #869cc5;
-    // background-color: white;
-
-
-
-        .Login {
-        // border: 2px solid orange;
-            height: 100%;
-            width: 100%;
-            display: flex;
+        .loginWrapper {
+                height: 60vh;
+                width: 85vw;                     
+                display: flex;
+                background-color: #e9fbff;
+                color: #869cc5;
+                
             
 
        
@@ -46,45 +34,54 @@
                         border: none;
                         padding: 5px;
                         background-color: white;
-                        
-                        // border: 1px solid lightgray;
                         border-radius: 30px;
+                        
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                    
+                            
+
                         input{
                             border: none;
                             width: 80%;
-                            // background-color: #869cc5;
                             background-color: white;
-                            // color: white;
                             outline: none;
-
-                                ::-webkit-input-placeholder{
-                                    color: white;
-                                }
                         }
-                    
+                                             
+
+                           
                     }
+                       
 
                     button{
-                        width: 50%;
                         height: 7.5%;
-                        margin: 10px;
+                        width: 50%;
                         padding: 5px;
-                        color: black;
+                        margin: 10px;
                         border: 1px solid #869cc5;
+                        color: black;
+                        background: #869cc5;
                         border-radius: 30px;
-                        background-color: #869cc5;
+                        // box-shadow: inset 20px 20px 60px #7285a7,
+                        //             inset -20px -20px 60px #9ab3e3;
+
+                           
                     }
 
                     a{
                         margin: 10px;
+                        color:#ee9038; 
+                        font-weight:normal;
+
+                        &:hover{
+                            cursor: pointer;
+                            font-weight: bold;
+                           
+                       }
                     }
 
             }
 
          }
-}
+
 

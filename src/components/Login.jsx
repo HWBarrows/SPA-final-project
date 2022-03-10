@@ -50,16 +50,17 @@ export default function Login() {
   }
 
   return (
-    <div className="loginWrapper">
+    // <div className="loginWrapper">
+     <>
       {(() => {
         if (isLoggedIn) {
           return <UserAccount />;
         }
         if (showSignUpForm) {
-          return <SignUp setShowSignUpForm={setShowSignUpForm} />;
+          return <SignUp showSignUpForm={showSignUpForm} setShowSignUpForm={setShowSignUpForm} />;
         }
         return (
-          <div className="Login">
+          <div className="loginWrapper">
             <div className="imgWrapper"></div>
 
             <div className="loginForm">
@@ -88,8 +89,7 @@ export default function Login() {
                 </button>
               
 
-                <a style={{color:"#eea058", fontWeight: "bold"}} onClick={() => setShowSignUpForm(true)}>
-                  {" "}
+                <a onClick={() => setShowSignUpForm(true)}>
                   New User? Sign up here{" "}
                 </a>
              
@@ -97,6 +97,7 @@ export default function Login() {
           </div>
         );
       })()}
-    </div>
+      </>
+    // </div>
   );
 }

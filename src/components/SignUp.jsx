@@ -1,9 +1,13 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
+import "../styles/SignUp.scss";
 
-const SignUp = ({setShowSignUpForm}) => {  
+const SignUp = ({showSignUpForm,setShowSignUpForm}) => {  
     const [users, setUsers] = useContext(UserContext)
     const [ data, setData ] = useState({})
+    
+    const [isUserRegistered, setIsUserRegistered] = useState(false)
+    
     
     function signUp(e){
         // take in the new username and password in a new-user object, and create a new user profile. 
@@ -29,23 +33,51 @@ const SignUp = ({setShowSignUpForm}) => {
                                     }
                             }
                             ])
-        setShowSignUpForm(false)
-               
+        
+        if(Object.keys(data).length > 0){
+            setIsUserRegistered(true)  
+            // setShowSignUpForm(false)
+
+        }
     }
 
-    console.log(users);
+    // console.log(users);
 
   return (
-    <div className='registrationForm'>
-        <input onChange={(e)=>{setData({ ...data, firstName: e.target.value })}} type="text" placeholder='first name' />
-        <input  onChange={(e)=>{setData({ ...data, lastName: e.target.value })}}  type="text" placeholder='last name' />
-        <input  onChange={(e)=>{setData({ ...data, dateOfBirth: e.target.value })}}  type="date" placeholder='date of birth' />
-        <input  onChange={(e)=>{setData({ ...data, email: e.target.value })}} type="email" placeholder='email' />
-        <input onChange={(e)=>{setData({ ...data, username: e.target.value })}}  type="text" placeholder='username' />
-        <input  onChange={(e)=>{setData({ ...data, password: e.target.value })}} type="password" placeholder='password' />
-        <button type="submit" onClick={signUp}>sign up</button>
-        <button onClick={()=>setShowSignUpForm(false)}>Back</button>
-    </div>
+    
+    <> 
+    {isUserRegistered ? 
+    
+            <div className='userSignedUp'>
+            "thank you for signing up!"
+            <button className='goBackToLogin' onClick={()=>setShowSignUpForm(false)}> Go back to Login</button>
+            </div> :
+
+            <div className='registrationForm'>
+            <div className='top'>
+                <h2>Sign Up</h2>
+            </div>
+
+            <div className='nameInputs'>
+            <input onChange={(e)=>{setData({ ...data, firstName: e.target.value })}} type="text" placeholder='first name' />
+            <input  onChange={(e)=>{setData({ ...data, lastName: e.target.value })}}  type="text" placeholder='last name' />
+            </div>
+
+            <input  onChange={(e)=>{setData({ ...data, username: e.target.value })}}  type="text" placeholder='username' />
+            <input  onChange={(e)=>{setData({ ...data, email: e.target.value })}} type="email" placeholder='email' />
+            <input  onChange={(e)=>{setData({ ...data, password: e.target.value })}} type="password" placeholder='password' />
+
+            <input  onChange={(e)=>{setData({ ...data, dateOfBirth: e.target.value })}}  type="date" placeholder='date of birth' />
+
+
+            <button className='signUpBtn' type="submit" onClick={signUp}>sign up</button>
+
+
+            </div>
+
+        } 
+
+    </>
   )
 }
 
