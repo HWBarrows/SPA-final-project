@@ -33,6 +33,8 @@ export default function Login() {
   function submitLogin(e) {
     e.preventDefault();
 
+    
+
     //Can use to confirm checkIfUserExist is truly empty
     //if (array[index] != null) {
     // The == and != operators consider null equal to only null or undefined

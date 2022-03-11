@@ -51,6 +51,9 @@ const SignUp = ({showSignUpForm,setShowSignUpForm}) => {
             <div className='userSignedUp'>
             "Thank you for signing up {data.firstName}!"
             <button className='goBackToLogin' onClick={()=>setShowSignUpForm(false)}> Go back to Login</button>
+            
+            
+
             </div> 
             
             :
