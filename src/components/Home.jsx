@@ -1,25 +1,46 @@
 import { NavLink, useLocation } from "react-router-dom"
+import { useContext } from "react"
 import OurRoutes from "./OurRoutes.jsx"
+import { ProfileContext } from '../contexts/ProfileContext.jsx'
 import '../styles/Home.scss'
+import Footer from "./Footer.jsx"
+
 
 export default function Home() {
+
+    const [profile, setProfile] = useContext(ProfileContext)
+    console.log(profile);
 
     const homeLocation = useLocation().pathname
     // console.log(homeLocation);
 
     //return conditional statement that renders a div of elements for landing page
 
-    if (homeLocation ==="/home") {
+    if (homeLocation ==="/home" || homeLocation ==="/") {
     return (
         <div className="homeWrapper">
             {/* <h1><NavLink to="home">Welcome home</NavLink></h1> */}
             <nav>
                 <div className="navWrapper">
-                <h1><NavLink to="home">Welcome home</NavLink></h1>
-                <ul className="landingList">
+                <ul className="landingList">  
+                
+                    <li><h1><NavLink to="home">Welcome home</NavLink></h1></li>
+               
                     <li><NavLink to="blog">Blog</NavLink></li>
+                    <li><NavLink to="music">Music News</NavLink></li>
                     <li><NavLink to="moreContent">More Content</NavLink></li>
-                    <li><NavLink to="userInfo">User Account</NavLink></li>
+                    <li><NavLink to="userInfo">
+                    {!profile && <div className="homeProfile">
+                        <p>Account</p>
+                        <div className="defaultProfile"></div>
+                        </div>}
+
+                    {profile && <div className="homeProfile">
+                        <p>Account</p>
+                        <div className="profilePic" style={{backgroundImage:`url(${profile.picture.thumbnail})`}}></div>
+                        </div>}
+                        </NavLink>
+                    </li>
                 </ul>
                 
                 <OurRoutes />
@@ -39,7 +60,7 @@ export default function Home() {
                         <div className="cutePhoto"></div>
                         <div className="cuteText">
                         <h3>Eye Bleach</h3>
-                        <p>Cuteness overload, all day long</p>
+                        <p>Cuteness overload, all the time</p>
                         </div>
                     </div>
                     <div className="advice">
@@ -66,7 +87,7 @@ export default function Home() {
                         </div>
                     </div>
                 
-            
+                    {/* <Footer/> */}
         </div>
     )
     } else {
@@ -74,17 +95,34 @@ export default function Home() {
             <div className="pageWrapper">
             <nav>
                 <div className="navWrapper">
-                <h1><NavLink to="home">Welcome home</NavLink></h1>
                 <ul className="landingList">
+                
+                   <li><h1><NavLink to="home">Welcome home</NavLink></h1></li>
+                
+                    
                     <li><NavLink to="blog">Blog</NavLink></li>
+                    <li><NavLink to="music">Music News</NavLink></li>
                     <li><NavLink to="moreContent">More Content</NavLink></li>
-                    <li><NavLink to="userInfo">User Account</NavLink></li>
-                </ul>
+                    <li><NavLink to="userInfo">
+                    {!profile && <div className="homeProfile">
+                        <p>Account</p>
+                        <div className="defaultProfile"></div>
+                        </div>}
+
+                    {profile && <div className="homeProfile">
+                        <p>Account</p>
+                        <div className="profilePic" style={{backgroundImage:`url(${profile.picture.thumbnail})`}}></div>
+                        </div>}
+                        </NavLink>
+                    </li>                </ul>
                 
                 <OurRoutes />
                 </div>
             </nav>    
+            {/* <Footer/> */}
             </div>
+
+            
         )
     }
 }

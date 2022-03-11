@@ -247,3 +247,5 @@ const musicArray = [
         "content": "The current generation of reggaeton superstars J Balvin, Rauw Alejandro, Farruko and more find themselves in constant dialogue with pop, EDM and hip-hop, and have become ambitious ambassadors of cult… [+535 chars]"
     }
 ]
+
+export { musicArray }
