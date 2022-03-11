@@ -1,7 +1,7 @@
 import { ProfileContext } from "../contexts/ProfileContext.jsx"
 import { useState } from "react"
 import {musicArray} from "../dataSources/musicNews.js"
-import '../styles/Music.scss'
+import '../styles/MoreCont.scss'
 
 export default function Music (){
 
@@ -14,13 +14,13 @@ export default function Music (){
         
     
         return(
-            <div className="musicWrapper">
+            <div className="moreContWrapper">
                 <div className="flexWrapper">
                 {currentArticle[0] != null &&  <div className='moreStyles'>
                 
                     <h3>{currentArticle[0].title}</h3>
-                    <div className='musicPhoto' style={{backgroundImage:`url(${currentArticle[0].urlToImage})`}}></div>
-                                    <div className='musicText'>
+                    <div className='moreContPhoto' style={{backgroundImage:`url(${currentArticle[0].urlToImage})`}}></div>
+                                    <div className='mText'>
                                     <h3>{currentArticle[0].title}</h3>
                                     <p>{currentArticle[0].content}</p>
                                  </div>
