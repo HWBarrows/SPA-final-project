@@ -12,7 +12,7 @@ export default function Home() {
     console.log(profile);
 
     const homeLocation = useLocation().pathname
-    console.log(homeLocation);
+    // console.log(homeLocation);
 
     //return conditional statement that renders a div of elements for landing page
 

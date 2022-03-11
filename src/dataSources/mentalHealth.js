@@ -83,3 +83,5 @@ const mentalHealthArticles = [
         "content": "Seasonal affective disorder (SAD) is a mental health condition marked by changes in mood that occur during the same seasons (typically the fall and winter) each year. SAD is often an additional diagn… [+4447 chars]"
     }
 ]
+
+export { mentalHealthArticles }
