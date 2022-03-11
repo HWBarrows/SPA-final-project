@@ -12,4 +12,7 @@ const ChatBox = ({name}) => {
   )
 }
 
+
 export default ChatBox
+
+

@@ -5,7 +5,7 @@ import '../styles/Home.scss'
 export default function Home() {
 
     const homeLocation = useLocation().pathname
-    console.log(homeLocation);
+    // console.log(homeLocation);
 
     //return conditional statement that renders a div of elements for landing page
 
