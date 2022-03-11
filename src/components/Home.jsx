@@ -22,9 +22,10 @@ export default function Home() {
             {/* <h1><NavLink to="home">Welcome home</NavLink></h1> */}
             <nav>
                 <div className="navWrapper">
-                   
-                <h1 className="homeHeading"><NavLink to="home">Welcome home</NavLink></h1>
-                <ul className="landingList"> 
+                <ul className="landingList">  
+                
+                    <li><h1><NavLink to="home">Welcome home</NavLink></h1></li>
+               
                     <li><NavLink to="blog">Blog</NavLink></li>
                     <li><NavLink to="music">Music News</NavLink></li>
                     <li><NavLink to="moreContent">More Content</NavLink></li>
@@ -94,9 +95,11 @@ export default function Home() {
             <div className="pageWrapper">
             <nav>
                 <div className="navWrapper">
-                   
-                    <h1 className="homeHeading"><NavLink to="home">Welcome home</NavLink></h1>
-                    <ul className="landingList"> 
+                <ul className="landingList">
+                
+                   <li><h1><NavLink to="home">Welcome home</NavLink></h1></li>
+                
+                    
                     <li><NavLink to="blog">Blog</NavLink></li>
                     <li><NavLink to="music">Music News</NavLink></li>
                     <li><NavLink to="moreContent">More Content</NavLink></li>
