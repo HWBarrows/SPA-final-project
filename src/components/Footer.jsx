@@ -1,7 +1,7 @@
 
 export default function Footer (){
     return (
-        <div>
+        <div className="footerWrapper">
             Hi from Footer
         </div>
     )

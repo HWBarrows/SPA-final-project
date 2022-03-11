@@ -1,24 +1,19 @@
 .pageWrapper{
     background-color:#869cc5
 }
+
 .homeWrapper {
     margin: 0;
     //border: 2px solid fuchsia;
     background-color: whitesmoke;
 
-        .landingList {
-            display: flex;
-            justify-content: space-around;
-            align-content: center;
-            //border: 1px solid yellow;
-            height: 10vh;
+       
+}
 
-            li {
-            display: flex;
-            align-items: center;
-            }
-        }
-
+.homeHeading {
+    border: 2px solid green;
+    display: inline-block;
+    text-align: center;
 }
 
 .landingList {
@@ -27,6 +22,7 @@
     align-content: center;
     //border: 1px solid yellow;
     height: 10vh;
+   
 
     li {
     display: flex;
