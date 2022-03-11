@@ -1,0 +1,37 @@
+.musicWrapper {
+    //border: 1px solid yellowgreen;
+    background-color: whitesmoke;
+
+    ul{
+        
+        display: flex;
+        justify-content: space-around;
+    }
+
+    li{
+        display:inline-block;
+        
+        width: 15%;
+        height: 5vh;
+        overflow:hidden;
+    }
+}
+
+.flexWrapper {
+    //margin-top: 2em;
+    height:75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:1px solid red;
+}
+
+.musicPhoto {
+    height: 55vh;
+    width: 85vw;
+    background-size: cover;
+}
+
+.footerWrapper {
+    border:2px solid blue;
+}

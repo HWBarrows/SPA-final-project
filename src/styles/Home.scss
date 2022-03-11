@@ -1,24 +1,16 @@
 .pageWrapper{
     background-color:#869cc5
 }
+
+.homeHeading{
+    display: inline;
+}
 .homeWrapper {
     margin: 0;
     //border: 2px solid fuchsia;
     background-color: whitesmoke;
 
-        .landingList {
-            display: flex;
-            justify-content: space-around;
-            align-content: center;
-            //border: 1px solid yellow;
-            height: 10vh;
-
-            li {
-            display: flex;
-            align-items: center;
-            }
-        }
-
+       
 }
 
 .landingList {

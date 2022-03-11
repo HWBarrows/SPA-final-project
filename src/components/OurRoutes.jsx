@@ -4,6 +4,7 @@ import Header from './Header.jsx'
 import MoreCont from './MoreCont.jsx'
 import UserAccount from './UserAccount.jsx'
 import Home from './Home.jsx'
+import Music from './Music.jsx'
 
 export default function OurRoutes(){
 
@@ -13,6 +14,7 @@ export default function OurRoutes(){
             <Route path="home" element={<div />}/>
             <Route path="blog" element={<Blog/>}/>
             <Route path="userInfo" element={<Header/>}/>
+            <Route path="music" element={<Music/>}/>
             <Route path="moreContent" element={<MoreCont/>}/>
         </Routes>
     )
