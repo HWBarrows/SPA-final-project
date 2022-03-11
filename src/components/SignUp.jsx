@@ -1,10 +1,13 @@
 import React, { useState, useContext } from 'react'
+import { ProfileContext } from '../contexts/ProfileContext';
 import { UserContext } from '../contexts/UserContext'
 import "../styles/SignUp.scss";
 
 const SignUp = ({showSignUpForm,setShowSignUpForm}) => {  
     const [users, setUsers] = useContext(UserContext)
+    const [profile, setProfile] = useContext(ProfileContext)
     const [ data, setData ] = useState({})
+
     
     const [isUserRegistered, setIsUserRegistered] = useState(false)
     
@@ -14,31 +17,30 @@ const SignUp = ({showSignUpForm,setShowSignUpForm}) => {
         // console.log(users);
         e.preventDefault()
   
-
-
-        setUsers([...users, {"login":
-                                {"username":data.username, 
-                                
-                                "password":data.password}, 
-                                "name": {
-                                    "first": data.firstName,
-                                    "last": data.lastName
-                                },
-                                    "email": data.email,
-                            
-                                "picture": 
-                                    {"medium":"http://www.formasdigitales.mx/images/client.png",
-                                    "large":"http://www.formasdigitales.mx/images/client.png",
-                                    "thumbnail":"http://www.formasdigitales.mx/images/client.png"
-                                    }
-                            }
-                            ])
+        const userObj = {"login":
+        {"username":data.username, 
         
+        "password":data.password}, 
+        "name": {
+            "first": data.firstName,
+            "last": data.lastName
+        },
+            "email": data.email,
+    
+        "picture": 
+            {"medium":"http://www.formasdigitales.mx/images/client.png",
+            "large":"http://www.formasdigitales.mx/images/client.png",
+            "thumbnail":"http://www.formasdigitales.mx/images/client.png"
+            }
+    }
+        setUsers([...users, userObj])
+
         if(Object.keys(data).length > 0){
             setIsUserRegistered(true)  
+            setProfile(userObj)
             // setShowSignUpForm(false)
-
         }
+
     }
 
     // console.log(users);
@@ -50,8 +52,11 @@ const SignUp = ({showSignUpForm,setShowSignUpForm}) => {
     
             <div className='userSignedUp'>
             "Thank you for signing up {data.firstName}!"
-            <button className='goBackToLogin' onClick={()=>setShowSignUpForm(false)}> Go back to Login</button>
+            <button className='goBackToLogin' onClick={()=>setShowSignUpForm(false)}> Your profile </button>
             
+
+            {/*             "Thank you for signing up {data.firstName}!"  */}
+            {/* go to your profile : setProfile (user which has been created) */}
             
 
             </div> 
