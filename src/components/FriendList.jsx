@@ -8,15 +8,23 @@ const FriendList = () => {
     const [profile] = useContext(ProfileContext)
     const [friendsToChat, setFriendsToChat] = useState([])
  
-    const friends = users.slice(0,5) //.sort(() => Math.random() - Math.random()).slice(0, 5)
+    const friends = users.slice(5,10) //.sort(() => Math.random() - Math.random()).slice(0, 5)
 
     
 
     function openChatBox(friend){
 
         // if that friend already exists on the array, dont keep on adding it double triple times. 
-        setFriendsToChat([...friendsToChat, friend])
+        // console.log(friendsToChat);
+        // console.log(friend);
+        const existingFriend = friendsToChat.find((item) => item.email === friend.email)
+        // "friend"
 
+        // if exisitingFriend { return }
+        
+        if(!existingFriend){
+        setFriendsToChat([...friendsToChat, friend])
+        }
         // ["monika ghimire", "dipesh gatuam"]
 
         // e.target.innerText

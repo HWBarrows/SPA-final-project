@@ -24,7 +24,7 @@ export default function MentalHealth(){
 
             
             {currentArticle  &&  <div className='moreStyles'>
-                <h3>{currentArticle.title}</h3>
+                {/* <h3>{currentArticle.title}</h3> */}
                 <div className='moreContPhoto' style={{backgroundImage:`url(${currentArticle.urlToImage})`}}></div>
                                         <div className='mText'>
                                         <h3>{currentArticle.title}</h3>

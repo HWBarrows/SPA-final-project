@@ -69,6 +69,7 @@ export default function Login() {
 
             <div className="loginForm">
               <h2>Log In</h2>
+              {/* 1st one */}
               <div>
                 <input
                   onChange={checkUserName}
@@ -77,6 +78,19 @@ export default function Login() {
                 ></input>
               </div>
 
+              {/* <div onChange={checkUserName}
+                  type="text"
+                  placeholder="Type your user name here">
+              </div> */}
+
+              {/* last one */}
+                {/* <input style={{margin:"10px", width:"50%", height:"7%", border:"none", padding:"5px", borderRadius: "30px", textAlign: "center"}}
+                  onChange={checkUserName}
+                  type="text"
+                  placeholder="Type your user name here"
+                ></input> */}
+              
+              {/* 1st one */}
               <div className="passwordField">
                 <input
                   onChange={checkPassword}
@@ -85,6 +99,15 @@ export default function Login() {
                 ></input>
                 <FaEye onMouseDown={() => setShow(!show)} />
               </div>
+
+              
+                {/* <input
+                  onChange={checkPassword}
+                  type={show ? "text" : "password"}
+                  placeholder="Type your password here"
+                ></input>
+                <FaEye onMouseDown={() => setShow(!show)} /> */}
+                
 
               {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
               

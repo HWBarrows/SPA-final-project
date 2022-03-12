@@ -37,6 +37,10 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+
+                            &:active{
+                                outline: #869cc5;
+                            }
                             
 
                         input{
