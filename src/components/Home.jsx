@@ -3,7 +3,7 @@ import { useContext } from "react"
 import OurRoutes from "./OurRoutes.jsx"
 import { ProfileContext } from '../contexts/ProfileContext.jsx'
 import '../styles/Home.scss'
-import Footer from "./Footer.jsx"
+
 
 
 export default function Home() {
@@ -24,11 +24,13 @@ export default function Home() {
                 <div className="navWrapper">
                 <ul className="landingList">  
                 
-                    <li><h1><NavLink to="home">Welcome home</NavLink></h1></li>
+                    <li><NavLink to="home"><div className="logo"></div></NavLink></li>
                
                     <li><NavLink to="blog">Blog</NavLink></li>
                     <li><NavLink to="music">Music News</NavLink></li>
-                    <li><NavLink to="moreContent">More Content</NavLink></li>
+                    {/* <li><NavLink to="moreContent">More Content</NavLink></li> */}
+                    <li><NavLink to="mentalHealth">Mental Health</NavLink></li>
+                    <li><NavLink to="beauty">Beauty</NavLink></li>
                     <li><NavLink to="userInfo">
                     {!profile && <div className="homeProfile">
                         <p>Account</p>
@@ -97,12 +99,14 @@ export default function Home() {
                 <div className="navWrapper">
                 <ul className="landingList">
                 
-                   <li><h1><NavLink to="home">Welcome home</NavLink></h1></li>
+                    <li><NavLink to="home"><div className="logo"></div></NavLink></li>
                 
                     
                     <li><NavLink to="blog">Blog</NavLink></li>
                     <li><NavLink to="music">Music News</NavLink></li>
-                    <li><NavLink to="moreContent">More Content</NavLink></li>
+                    <li><NavLink to="mentalHealth">Mental Health</NavLink></li>
+                    <li><NavLink to="beauty">Beauty</NavLink></li>
+                    {/* <li><NavLink to="moreContent">More Content</NavLink></li> */}
                     <li><NavLink to="userInfo">
                     {!profile && <div className="homeProfile">
                         <p>Account</p>
