@@ -12,7 +12,7 @@ export default function Music (){
         const postLimit = musicArray.filter((item, index)=> index <= posts)
         const currentArticle = postLimit.filter(item=> item.title === displayPost)
         
-    
+    // copy line 16-35, 
         return(
             <div className="moreContWrapper">
                 <div className="flexWrapper">
