@@ -3,7 +3,8 @@ import { useContext } from "react"
 import OurRoutes from "./OurRoutes.jsx"
 import { ProfileContext } from '../contexts/ProfileContext.jsx'
 import '../styles/Home.scss'
-import { GiAstronautHelmet } from "react-icons/gi";
+
+
 
 export default function Home() {
 
@@ -21,10 +22,15 @@ export default function Home() {
             {/* <h1><NavLink to="home">Welcome home</NavLink></h1> */}
             <nav>
                 <div className="navWrapper">
-                <h1><NavLink to="home">Welcome home</NavLink></h1>
-                <ul className="landingList">
+                <ul className="landingList">  
+                
+                    <li><NavLink to="home"><div className="logo"></div></NavLink></li>
+               
                     <li><NavLink to="blog">Blog</NavLink></li>
-                    <li><NavLink to="moreContent">More Content</NavLink></li>
+                    <li><NavLink to="music">Music News</NavLink></li>
+                    {/* <li><NavLink to="moreContent">More Content</NavLink></li> */}
+                    <li><NavLink to="mentalHealth">Mental Health</NavLink></li>
+                    <li><NavLink to="beauty">Beauty</NavLink></li>
                     <li><NavLink to="userInfo">
                     {!profile && <div className="homeProfile">
                         <p>Account</p>
@@ -83,7 +89,7 @@ export default function Home() {
                         </div>
                     </div>
                 
-            
+                    {/* <Footer/> */}
         </div>
     )
     } else {
@@ -91,10 +97,16 @@ export default function Home() {
             <div className="pageWrapper">
             <nav>
                 <div className="navWrapper">
-                <h1><NavLink to="home">Welcome home</NavLink></h1>
                 <ul className="landingList">
+                
+                    <li><NavLink to="home"><div className="logo"></div></NavLink></li>
+                
+                    
                     <li><NavLink to="blog">Blog</NavLink></li>
-                    <li><NavLink to="moreContent">More Content</NavLink></li>
+                    <li><NavLink to="music">Music News</NavLink></li>
+                    <li><NavLink to="mentalHealth">Mental Health</NavLink></li>
+                    <li><NavLink to="beauty">Beauty</NavLink></li>
+                    {/* <li><NavLink to="moreContent">More Content</NavLink></li> */}
                     <li><NavLink to="userInfo">
                     {!profile && <div className="homeProfile">
                         <p>Account</p>
@@ -106,13 +118,15 @@ export default function Home() {
                         <div className="profilePic" style={{backgroundImage:`url(${profile.picture.thumbnail})`}}></div>
                         </div>}
                         </NavLink>
-                    </li>
-                </ul>
+                    </li>                </ul>
                 
                 <OurRoutes />
                 </div>
             </nav>    
+            {/* <Footer/> */}
             </div>
+
+            
         )
     }
 }
