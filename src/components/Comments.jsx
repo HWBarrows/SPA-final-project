@@ -16,14 +16,14 @@ export default function SaveComments(props){
     const [userComments, setUserComments] = useState({
        
         user: !profile? "" : profile.login.username,
-        article:props.posts,
+        article:"",
         content:""
     });
 
     
     const handleOnChange = (e)=> {
         setUserComments(()=> ({
-            ...userComments, content:e.target.value
+            ...userComments, content:e.target.value, article:props.posts,
         }))
     }
 
@@ -32,23 +32,27 @@ export default function SaveComments(props){
         if (!profile){
         alert("Please login to comment")
         }
-        profile && setArrayOfComments([...arrayOfComments, userComments])
-        
+        profile && userComments.content && setArrayOfComments([...arrayOfComments, userComments])
+        setUserComments(()=> ({
+            ...userComments, content:''
+        }))
         
         console.log(arrayOfComments);
     }
 
+    const displayArray = arrayOfComments.filter(item => item.article === props.posts)
+    console.log(displayArray);
     return (
         <div>
             <form>
             <input type="text" value={userComments.content} onChange={handleOnChange}/>
             <button type="submit" onClick={addToArray}>I submit</button>
             </form>
-        {/* {arrayOfComments.filter((item, index)=> {
-            item.article === props.posts
-            return <li key={index}>{item.user}, {item.content}</li> */}
         
-            {arrayOfComments.map((item, index)=> <li key={index}>{item.user}, {item.content}</li>)}
+             {displayArray.map((item, index) => <li key={index}>{item.user}, {item.content}</li>)}
+        
+            {/* {arrayOfComments.map((item, index)=> <li key={index}>{item.user}, {item.content}</li>)} */}
+            
         </div>
     )
 }
