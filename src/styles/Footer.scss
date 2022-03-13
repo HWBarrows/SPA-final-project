@@ -3,16 +3,16 @@
 
 
 .footerWrapper {
-   background-color: rgb(134, 156, 197);
-    position:relative;
    
-    bottom:0;
+    position:relative;
+   bottom:0px;
    width: 100%;
    font-family: 'Cormorant Garamond', serif;
-  
+   margin-top: 30px; 
  }
 
 ul{
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,6 +29,8 @@ ul{
         display: flex;
         justify-content: center;
         align-items: center;
+        
     }
+
 
 
