@@ -1,30 +1,54 @@
 import { ProfileContext } from '../contexts/ProfileContext'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 
-export default function SaveComments(){
+
+export default function SaveComments(props){
 
     const [profile, setProfile ] = useContext(ProfileContext)
+    const [ arrayOfComments, setArrayOfComments ] = useState([])
 
-    //save comment array of objects to local storage. 
-    const [values, setValues] = useState({
-       // artcle: should be equal blog title,
-        lastName: '',
-        email: '',
+    // const [ newComment, setNewComment ] = useState("")
+
+    //save comment array of objects to local storage.
+    
+    
+    const [userComments, setUserComments] = useState({
+       
+        user: !profile? "" : profile.login.username,
+        article:props.posts,
+        content:""
     });
+
+    
+    const handleOnChange = (e)=> {
+        setUserComments(()=> ({
+            ...userComments, content:e.target.value
+        }))
+    }
 
     const addToArray =(e)=> {
         e.preventDefault()
-        console.log(e.target);
+        if (!profile){
+        alert("Please login to comment")
+        }
+        profile && setArrayOfComments([...arrayOfComments, userComments])
+        
+        
+        console.log(arrayOfComments);
     }
 
     return (
         <div>
             <form>
-            <input type="text" onChange={(e)=> console.log(e.target.value)}/>
+            <input type="text" value={userComments.content} onChange={handleOnChange}/>
             <button type="submit" onClick={addToArray}>I submit</button>
-            
             </form>
+        {/* {arrayOfComments.filter((item, index)=> {
+            item.article === props.posts
+            return <li key={index}>{item.user}, {item.content}</li> */}
+        
+            {arrayOfComments.map((item, index)=> <li key={index}>{item.user}, {item.content}</li>)}
         </div>
     )
 }
