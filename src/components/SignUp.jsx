@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { ProfileContext } from '../contexts/ProfileContext';
 import { UserContext } from '../contexts/UserContext'
 import "../styles/SignUp.scss";
+// import astro from "../styles/astro.jpeg"
 
 const SignUp = ({showSignUpForm,setShowSignUpForm}) => {  
     const [users, setUsers] = useContext(UserContext)
