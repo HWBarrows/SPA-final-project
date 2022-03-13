@@ -1,6 +1,7 @@
 import { ProfileContext } from "../contexts/ProfileContext.jsx"
 import { useState } from "react"
 import {musicArray} from "../dataSources/musicNews.js"
+import SaveComments from "./Comments.jsx"
 import '../styles/MoreCont.scss'
 
 export default function Music (){
@@ -25,7 +26,7 @@ export default function Music (){
                                     <h3>{currentArticle[0].title}</h3>
                                     <p>{currentArticle[0].content}</p>
                                  </div>
-                
+                    <SaveComments/>
                 </div>}
                 <ul> 
                 {postLimit.map(article => <li onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}
