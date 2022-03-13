@@ -40,8 +40,8 @@ const FriendList = () => {
         <>
         
         {profile && <div className='friends'> 
-                        <p>Besties</p>
-                        <ul >
+                        <h3>Besties</h3>
+                        <ul className='friendlist'>
                         {friends.map((friend,i ) => 
                             <li onClick={()=>{openChatBox(friend)}} key={i}> 
                                 <img src= { friend.picture.thumbnail }/>  
