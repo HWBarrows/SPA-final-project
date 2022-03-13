@@ -49,21 +49,6 @@ const SignUp = ({showSignUpForm,setShowSignUpForm}) => {
   return (
     
     <> 
-    {isUserRegistered ? 
-    
-            <div className='userSignedUp'>
-            "Thank you for signing up {data.firstName}!"
-            <button className='goBackToLogin' onClick={()=>setShowSignUpForm(false)}> Your profile </button>
-            
-
-            {/*             "Thank you for signing up {data.firstName}!"  */}
-            {/* go to your profile : setProfile (user which has been created) */}
-            
-
-            </div> 
-            
-            :
-
             <div className='registrationForm'>
                 <div className='top'>
                     <h2>Sign Up</h2>
@@ -86,7 +71,7 @@ const SignUp = ({showSignUpForm,setShowSignUpForm}) => {
 
             </div>
 
-        } 
+    
 
     </>
   )

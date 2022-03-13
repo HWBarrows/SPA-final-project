@@ -33,8 +33,6 @@ export default function Login() {
   function submitLogin(e) {
     e.preventDefault();
 
-    
-
     //Can use to confirm checkIfUserExist is truly empty
     //if (array[index] != null) {
     // The == and != operators consider null equal to only null or undefined
@@ -55,53 +53,60 @@ export default function Login() {
 
   return (
     // <div className="loginWrapper">
-     <>
+    <>
       {(() => {
         if (isLoggedIn) {
           return <UserAccount />;
         }
-        if (showSignUpForm) {
-          return <SignUp showSignUpForm={showSignUpForm} setShowSignUpForm={setShowSignUpForm} />;
-        }
+        // if (showSignUpForm) {
+        //   return <SignUp showSignUpForm={showSignUpForm} setShowSignUpForm={setShowSignUpForm} />;
+        // }
         return (
           <div className="loginWrapper">
             <div className="imgWrapper"></div>
+            {showSignUpForm && (
+              <SignUp
+                showSignUpForm={showSignUpForm}
+                setShowSignUpForm={setShowSignUpForm}
+              />
+            )}
 
-            <div className="loginForm">
-              <h3>Log In</h3>
-             
-                <input className="loginInput"
+            {!showSignUpForm && (
+              <div className="loginForm">
+                <h3>Log In</h3>
+
+                <input
+                  className="loginInput"
                   onChange={checkUserName}
                   type="text"
                   placeholder="Enter your username"
                 ></input>
-              
-              
-                <input className="loginInput"
+
+                <input
+                  className="loginInput"
                   onChange={checkPassword}
                   type={show ? "text" : "password"}
                   placeholder="Enter your password"
                 ></input>
-                <span><FaEye onMouseDown={() => setShow(!show)} /></span>
-                
-                
+                <span>
+                  <FaEye onMouseDown={() => setShow(!show)} />
+                </span>
 
-              {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
-              
+                {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
+
                 <button type="submit" onClick={submitLogin}>
                   Log In
                 </button>
-              
 
                 <a onClick={() => setShowSignUpForm(true)}>
                   New User? Sign up here{" "}
                 </a>
-             
-            </div>
+              </div>
+            )}
           </div>
         );
       })()}
-      </>
+    </>
     // </div>
   );
 }
