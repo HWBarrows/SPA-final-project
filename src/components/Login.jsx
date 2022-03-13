@@ -68,45 +68,22 @@ export default function Login() {
             <div className="imgWrapper"></div>
 
             <div className="loginForm">
-              <h2>Log In</h2>
-              {/* 1st one */}
-              <div>
-                <input
+              <h3>Log In</h3>
+             
+                <input className="loginInput"
                   onChange={checkUserName}
                   type="text"
-                  placeholder="Type your user name here"
+                  placeholder="Enter your username"
                 ></input>
-              </div>
-
-              {/* <div onChange={checkUserName}
-                  type="text"
-                  placeholder="Type your user name here">
-              </div> */}
-
-              {/* last one */}
-                {/* <input style={{margin:"10px", width:"50%", height:"7%", border:"none", padding:"5px", borderRadius: "30px", textAlign: "center"}}
-                  onChange={checkUserName}
-                  type="text"
-                  placeholder="Type your user name here"
-                ></input> */}
               
-              {/* 1st one */}
-              <div className="passwordField">
-                <input
+              
+                <input className="loginInput"
                   onChange={checkPassword}
                   type={show ? "text" : "password"}
-                  placeholder="Type your password here"
+                  placeholder="Enter your password"
                 ></input>
-                <FaEye onMouseDown={() => setShow(!show)} />
-              </div>
-
-              
-                {/* <input
-                  onChange={checkPassword}
-                  type={show ? "text" : "password"}
-                  placeholder="Type your password here"
-                ></input>
-                <FaEye onMouseDown={() => setShow(!show)} /> */}
+                <span><FaEye onMouseDown={() => setShow(!show)} /></span>
+                
                 
 
               {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
