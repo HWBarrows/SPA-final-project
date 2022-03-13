@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import Blog from './Blog.jsx'
 import Header from './Header.jsx'
-import MoreCont from './MoreCont.jsx'
 import MentalHealth from'./MentalHealth.jsx'
 import Music from './Music.jsx'
 import Beauty from './Beauty.jsx'

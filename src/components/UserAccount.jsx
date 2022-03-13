@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react"
 import { UserContext } from "../contexts/UserContext.jsx"
 import { ProfileContext } from "../contexts/ProfileContext.jsx"
+
 import '../styles/UserAccount.scss'
 
 export default function UserAccount() {
@@ -9,10 +10,11 @@ export default function UserAccount() {
     const [users, setUsers] = useContext(UserContext)
     
     
-    //this is to dynamically personalize the profile component
-    const [profile] = useContext(ProfileContext)
+    const [profile, setProfile ] = useContext(ProfileContext)
+
     
-    // console.log(profile);
+    
+     //console.log(profile.login);
     
         
          return( 
@@ -28,9 +30,7 @@ export default function UserAccount() {
                    
                 </div>}
 
-            {/* {!profile && <div className="registration">
-                <p>Please sign In</p>
-                </div>} */}
+           
              </div>
          )
                 

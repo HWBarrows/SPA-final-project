@@ -1,5 +1,6 @@
 import {mentalHealthArticles} from '../dataSources/mentalHealth.js'
 import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 console.log(mentalHealthArticles);
@@ -18,22 +19,26 @@ export default function MentalHealth(){
 
     return (
     
-        <div className="mentalHealthArticles">
-            <ol>
-            {articleLimit.map((article,i) => <li onClick={(e)=>setDisplayArticle(article)} key={i}>
-                <p>{article.title}</p>
-                </li>)}
-            </ol>
-            {currentArticle  &&  <div className='articleWrapper'>
-                                        <div className='blogPhoto' style={{backgroundImage:`url(${currentArticle.urlToImage})`, backgroundSize: " contain "}}></div>
-                                        <div className='blogText'>
+        <div className="moreContWrapper">
+            <div className='flexWrapper'>
+
+            
+            {currentArticle  &&  <div className='moreStyles'>
+                {/* <h3>{currentArticle.title}</h3> */}
+                <div className='moreContPhoto' style={{backgroundImage:`url(${currentArticle.urlToImage})`}}></div>
+                                        <div className='mText'>
                                         <h3>{currentArticle.title}</h3>
                                         <p>{currentArticle.content}</p>
                                         </div>
             </div>}
+            <ul>
+            {articleLimit.map((article,i) => <li onClick={(e)=>setDisplayArticle(article)} key={i}>
+                {article.title}
+                </li>)}
+            </ul>
+            
+            </div>
 
-            Hi from MoreCont
-            {/* <NewsApi/> */}
         </div>
     )
 }
