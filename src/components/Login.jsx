@@ -58,9 +58,7 @@ export default function Login() {
         if (isLoggedIn) {
           return <UserAccount />;
         }
-        // if (showSignUpForm) {
-        //   return <SignUp showSignUpForm={showSignUpForm} setShowSignUpForm={setShowSignUpForm} />;
-        // }
+  
         return (
           <div className="loginWrapper">
             <div className="imgWrapper"></div>
@@ -88,7 +86,7 @@ export default function Login() {
                   type={show ? "text" : "password"}
                   placeholder="Enter your password"
                 ></input>
-                <span>
+                <span className="eyeForLogin">
                   <FaEye onMouseDown={() => setShow(!show)} />
                 </span>
 
