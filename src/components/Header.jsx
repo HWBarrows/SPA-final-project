@@ -23,7 +23,7 @@ export default function Header () {
         <div className="head">
            <div>
             <UserAccount/>
-            {profile ? <button onClick={()=> { setProfile(false) } }>Log out</button> : <Login/>}   
+            {!profile && <Login/>}   
             </div>
             <Friendlist/>
         </div>

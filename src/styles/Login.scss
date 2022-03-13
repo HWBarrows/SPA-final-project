@@ -48,7 +48,8 @@
             padding-left: 10px;
             
             &:active, &:hover {
-                border: 1px solid #28d3db;
+                box-shadow: 5px 5px 5px #95b5bd, 0px 0px 5px #95b5bd;
+                
             }
                 
         }
