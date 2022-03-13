@@ -52,7 +52,7 @@ export default function Home() {
                 <div className="banner">
                     <div className="bannerPhoto"></div>
                     <div className="bannerText">
-                    <h1>Lorem ipsum dolor sit amet.</h1>  
+                    <h1> About us</h1>  
                     <p>Chupa chups liquorice soufflé lollipop croissant marshmallow. Carrot cake jelly chupa chups donut lemon drops. Croissant candy bear claw dessert oat cake cupcake pudding donut danish.</p>  
                     </div>
                 </div>
