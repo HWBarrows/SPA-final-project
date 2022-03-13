@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {fashionArticles} from '../dataSources/fashionNews.js'
 import '../styles/Blog.scss'
 // import NewsApi from './NewsApiTest.jsx'
 
-console.log(fashionArticles);
+// console.log(fashionArticles);
 export default function Blog (){
 
     const [ posts, setPosts ] = useState(4)
@@ -16,17 +16,24 @@ export default function Blog (){
     // console.log("display post is " + displayPost);
 
     return(
-        <div>
-            <ul>
-            {postLimit.map(article => <li onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}</ul>
-            {/* <NewsApi/> */}
-           {currentArticle[0] != null &&  <div className='blogWrapper'>
-                                        <div className='blogPhoto' style={{backgroundImage:`url(${currentArticle[0].urlToImage})`}}></div>
-                                        <div className='blogText'>
-                                        <h3>{currentArticle[0].title}</h3>
-                                        <p>{currentArticle[0].content}</p>
-                                        </div>
+        <div className="blogWrapper">
+            <div className="flexWrapper">
+
+            {currentArticle[0] != null &&  <div className='blogStyles'>
+            
+                {/* <h3>{currentArticle[0].title}</h3> */}
+                <div className='blogPhoto' style={{backgroundImage:`url(${currentArticle[0].urlToImage})`}}></div>
+                                <div className='mText'>
+                                <h3>{currentArticle[0].title}</h3>
+                                <p>{currentArticle[0].content}</p>
+                             </div>
+                {/* <SaveComments/> */}
             </div>}
+            <ul> 
+            {postLimit.map(article => <li onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}
+            </ul>
+            
+            </div>
         </div>
     )
 }

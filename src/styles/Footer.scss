@@ -1,0 +1,34 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dancing+Script&display=swap');
+
+
+.footerWrapper {
+   background-color: rgb(134, 156, 197);
+    position:relative;
+   
+    bottom:0;
+   width: 100%;
+   font-family: 'Cormorant Garamond', serif;
+  
+ }
+
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    list-style-type: none;
+   
+    }
+
+    li{
+       padding:5px
+    }
+
+    h4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
