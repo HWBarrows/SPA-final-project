@@ -2,7 +2,7 @@
     //border: 2px solid yellow;
     margin: 0 auto;
     width: 70%;
-    height: 55vh;
+    height: 60vh;
     background-color: aliceblue;
     border-radius: 2.5px;
     display: flex;
@@ -44,5 +44,23 @@
         &:hover{
             box-shadow: 1px 10px 15px -1px rgba(0,0,0,0.71);
         }
+    }
+}
+
+.justforlogout {
+    display: flex;
+    flex-direction: column;
+}
+
+#logout {
+    width: 7vw;
+    height: 2rem;
+    align-self: center;
+    border-radius: 30px;
+    border: 1px solid #869cc5;
+
+    &:hover {
+        background-color: #EB7462;
+        color: white;
     }
 }
