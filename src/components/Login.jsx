@@ -66,6 +66,7 @@ export default function Login() {
               <SignUp
                 showSignUpForm={showSignUpForm}
                 setShowSignUpForm={setShowSignUpForm}
+              
               />
             )}
 

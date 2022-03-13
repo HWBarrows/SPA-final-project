@@ -4,10 +4,11 @@ import { UserContext } from "../contexts/UserContext";
 import { FaEye } from "react-icons/fa";
 import "../styles/Login.scss";
 import "../styles/SignUp.scss";
-// import astro from "../styles/astro.jpeg"
+import astro from "../styles/astro.jpeg"
 
 const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
   const [users, setUsers] = useContext(UserContext);
+  const [show, setShow] = useState(false)
   const [profile, setProfile] = useContext(ProfileContext);
   const [data, setData] = useState({});
 
@@ -31,9 +32,13 @@ const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
       email: data.email,
 
       picture: {
-        medium: "http://www.formasdigitales.mx/images/client.png",
-        large: "http://www.formasdigitales.mx/images/client.png",
-        thumbnail: "http://www.formasdigitales.mx/images/client.png",
+        // medium: "http://www.formasdigitales.mx/images/client.png",
+        // large: "http://www.formasdigitales.mx/images/client.png",
+        // thumbnail: "http://www.formasdigitales.mx/images/client.png"
+        medium: astro,
+        large: astro,
+        thumbnail: astro
+     
       },
     };
     setUsers([...users, userObj]);
@@ -67,6 +72,13 @@ const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
             placeholder="last name"
           />
         </div>
+        <input className="loginInput"
+          onChange={(e) => {
+            setData({ ...data, email: e.target.value });
+          }}
+          type="email"
+          placeholder="email"
+        />
 
         <input className="loginInput"
           onChange={(e) => {
@@ -75,22 +87,16 @@ const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
           type="text"
           placeholder="username"
         />
-        <input className="loginInput"
-          onChange={(e) => {
-            setData({ ...data, email: e.target.value });
-          }}
-          type="email"
-          placeholder="email"
-        />
+       
         <input className="loginInput"
           onChange={(e) => {
             setData({ ...data, password: e.target.value });
           }}
-          type="password"
+          type={show ? "text" : "password"}
           placeholder="password"
         />
         <span className="eyeForSignUp">
-        <FaEye onMouseDown={() => setShow(!show)} />
+        <FaEye onClick={() => setShow(!show)} />
         </span>
 
         <button className="signUpBtn" type="submit" onClick={signUp}>
