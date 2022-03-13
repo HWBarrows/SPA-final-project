@@ -13,13 +13,14 @@ export default function Music (){
         const postLimit = musicArray.filter((item, index)=> index <= posts)
         const currentArticle = postLimit.filter(item=> item.title === displayPost)
         
-    
+    // copy line 16-35, 
         return(
             <div className="moreContWrapper">
                 <div className="flexWrapper">
+
                 {currentArticle[0] != null &&  <div className='moreStyles'>
                 
-                    <h3>{currentArticle[0].title}</h3>
+                    {/* <h3>{currentArticle[0].title}</h3> */}
                     <div className='moreContPhoto' style={{backgroundImage:`url(${currentArticle[0].urlToImage})`}}></div>
                                     <div className='mText'>
                                     <h3>{currentArticle[0].title}</h3>
@@ -30,6 +31,7 @@ export default function Music (){
                 <ul> 
                 {postLimit.map(article => <li onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}
                 </ul>
+                
                 </div>
             </div>
         )
