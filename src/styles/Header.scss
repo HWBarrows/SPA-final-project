@@ -1,18 +1,48 @@
 .head {
-    width: 100%;
+    //border: 2px solid yellow;
+    margin: 0 auto;
+    width: 70%;
     height: 55vh;
-    // background-color: aliceblue;
-    // border:1px solid fuchsia;
+    background-color: aliceblue;
+    border-radius: 2.5px;
     display: flex;
-
+    //padding-top: 2rem;
     justify-content: center;
+    gap:2em;
 }
 
-// .loginWrapper{
-//     border: 3px solid yellowgreen;
-// }
+.userDetails {
+    margin:2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.userPhoto{
+    height: 200px;
+    width:250px;
+    background-size: cover;
+    border-radius: 2.5px;
+}
 
-// .Login {
-//     border: 2px solid orange;
-//     height:25vh;
-// }
+.friends {
+    margin-top: 1em;
+}
+.friendlist {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+    width: 15vw;
+    //border: 1px solid blueviolet;
+   
+
+    li {
+        list-style: none;
+        padding: 2%;
+        border-radius: 2.5px;
+
+        &:hover{
+            box-shadow: 1px 10px 15px -1px rgba(0,0,0,0.71);
+        }
+    }
+}

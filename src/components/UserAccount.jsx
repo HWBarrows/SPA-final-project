@@ -2,7 +2,6 @@ import { useContext, useEffect } from "react"
 import { UserContext } from "../contexts/UserContext.jsx"
 import { ProfileContext } from "../contexts/ProfileContext.jsx"
 
-import '../styles/UserAccount.scss'
 
 export default function UserAccount() {
 
@@ -23,9 +22,9 @@ export default function UserAccount() {
             {profile &&  <div className="userDetails">
                     
                     <div className="userPhoto" style={{backgroundImage:`url(${profile.picture.large})`}}></div>
-                    <h3>{profile.name.first} {profile.name.last}</h3>
-                    <p>{profile.login.username}</p>
-                    <p>{profile.email}</p>
+                    <h3>Name: {profile.name.first} {profile.name.last}</h3>
+                    <p>Username: {profile.login.username}</p>
+                    <p>Email: {profile.email}</p>
                     
                    
                 </div>}
