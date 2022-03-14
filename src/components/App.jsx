@@ -15,7 +15,7 @@ export default function App() {
         <div>
             <UsersContextProvider>
                 <ProfileContextProvider>
-                    {/* Change <Header/> to home and will contain blog & sidebar*/}
+                   
                     <Home/>
                     {/*<Header />
                      <Blog/>
