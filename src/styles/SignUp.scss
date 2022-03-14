@@ -1,55 +1,40 @@
-.registrationForm{
-    height: 50vh;
-    width: 60vw;                     
-    background-color: #e9fbff;
-    color: #869cc5;
-    // border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;   
-    padding-left: 5px;  
-}
-
-
-
-.registrationForm input{
-    width: 95%;
-    height: 8%;
-    border: 1px solid #869cc5;
-    border-radius: 10px;
-    outline: none;
-
-}
-
-
-.nameInputs{
-    width: 95%;
-    height: 8%;
+.nameInputs {
+    width: 52%;
+    height: 13%;
     display: flex;
     justify-content: center;
+    align-items: center;
 
 
-        input{
-            width: 50%;
-            height: 100%;
-            outline: none;
+    .loginNameInput {
+        width: 60%;
+        height: 60%;
+        margin: 2px;
+        background-color: white;
+        position: relative;
+        text-align: start;
+        outline: #869cc5;
+        border-radius: 30px;
+        border: none;
+        font-size: 0.8em;
+        padding-left: 10px;
+
+        &:active,
+        &:hover {
+            box-shadow: 5px 5px 5px #95b5bd, 0px 0px 5px #95b5bd;
         }
+
+
+    }
+
 }
 
+.eyeForSignUp {
 
+    position: absolute;
+    right: 20%;
+    bottom: 50%;
+    transform: translate(10%, -38%);
 
-.signUpBtn{
-    background-color: #869cc5;
-    width: 40%;
-    margin: 0 auto;
+    font-size: 13.33px;
 }
-
-
-.goBackToLogin{
-    background-color: white;
-    width: 40%;
-    margin: 0 auto;
-}
-
-
-

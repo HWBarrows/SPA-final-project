@@ -1,15 +1,12 @@
 import { NavLink, useLocation } from "react-router-dom"
-import { useContext } from "react"
-import OurRoutes from "./OurRoutes.jsx"
-import { ProfileContext } from '../contexts/ProfileContext.jsx'
+import { useContext, useState } from "react"
 import '../styles/Home.scss'
+import AccountDetailBox from "./AccountDetailBox.jsx"
+import Nav from "./Nav.jsx"
 
 
 
 export default function Home() {
-
-    const [profile, setProfile] = useContext(ProfileContext)
-    console.log(profile);
 
     const homeLocation = useLocation().pathname
     // console.log(homeLocation);
@@ -20,34 +17,8 @@ export default function Home() {
     return (
         <div className="homeWrapper">
             {/* <h1><NavLink to="home">Welcome home</NavLink></h1> */}
-            <nav>
-                <div className="navWrapper">
-                <ul className="landingList">  
-                
-                    <li><NavLink to="home"><div className="logo"></div></NavLink></li>
-               
-                    <li><NavLink to="blog">Blog</NavLink></li>
-                    <li><NavLink to="music">Music News</NavLink></li>
-                    {/* <li><NavLink to="moreContent">More Content</NavLink></li> */}
-                    <li><NavLink to="mentalHealth">Mental Health</NavLink></li>
-                    <li><NavLink to="beauty">Beauty</NavLink></li>
-                    <li><NavLink to="userInfo">
-                    {!profile && <div className="homeProfile">
-                        <p>Account</p>
-                        <div className="defaultProfile"></div>
-                        </div>}
+            <Nav />
 
-                    {profile && <div className="homeProfile">
-                        <p>Account</p>
-                        <div className="profilePic" style={{backgroundImage:`url(${profile.picture.thumbnail})`}}></div>
-                        </div>}
-                        </NavLink>
-                    </li>
-                </ul>
-                
-                <OurRoutes />
-                </div>
-            </nav>
             <div className="flexContainer">
                 <div className="banner">
                     <div className="bannerPhoto"></div>
@@ -95,38 +66,9 @@ export default function Home() {
     } else {
         return (
             <div className="pageWrapper">
-            <nav>
-                <div className="navWrapper">
-                <ul className="landingList">
-                
-                    <li><NavLink to="home"><div className="logo"></div></NavLink></li>
-                
-                    
-                    <li><NavLink to="blog">Blog</NavLink></li>
-                    <li><NavLink to="music">Music News</NavLink></li>
-                    <li><NavLink to="mentalHealth">Mental Health</NavLink></li>
-                    <li><NavLink to="beauty">Beauty</NavLink></li>
-                    {/* <li><NavLink to="moreContent">More Content</NavLink></li> */}
-                    <li><NavLink to="userInfo">
-                    {!profile && <div className="homeProfile">
-                        <p>Account</p>
-                        <div className="defaultProfile"></div>
-                        </div>}
-
-                    {profile && <div className="homeProfile">
-                        <p>Account</p>
-                        <div className="profilePic" style={{backgroundImage:`url(${profile.picture.thumbnail})`}}></div>
-                        </div>}
-                        </NavLink>
-                    </li>                </ul>
-                
-                <OurRoutes />
-                </div>
-            </nav>    
+            <Nav />    
             {/* <Footer/> */}
-            </div>
-
-            
+            </div> 
         )
     }
 }
