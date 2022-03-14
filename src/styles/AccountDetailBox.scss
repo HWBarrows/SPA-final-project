@@ -1,8 +1,9 @@
 .accountBox{
     height: 100px;
-    width: 200px;
-    border: 1px solid white;
-    background-color: white;
+    width: 150px;
+    // border: 1px solid white;
+    background-color: #e9fbff;
+    border-radius: 5px;
     color: black;
     display: flex;
     flex-direction: column;
@@ -12,12 +13,16 @@
     bottom: 0;
     transform: translate(-31%, 70%);
 
+
+
         li{
-            color: grey;
-            border-bottom: 1px solid grey;
+            color: black;
+            width: 100%;
+            border-bottom: .5px dotted grey;
+            
         }
         a{
-            color: grey;
+            color: black;
         }
 
 
