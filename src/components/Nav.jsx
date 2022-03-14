@@ -21,10 +21,10 @@ const Nav = () => {
                 
                     <li><NavLink to="home"><div className="logo"></div></NavLink></li>
                
-                    <li><NavLink to="blog">Blog</NavLink></li>
-                    <li><NavLink to="music">Music News</NavLink></li>
+                    <li><NavLink to="blog">Fashion</NavLink></li>
+                    <li><NavLink to="music">Music</NavLink></li>
                     {/* <li><NavLink to="moreContent">More Content</NavLink></li> */}
-                    <li><NavLink to="mentalHealth">Mental Health</NavLink></li>
+                    <li><NavLink to="mentalHealth">Mind</NavLink></li>
                     <li><NavLink to="beauty">Beauty</NavLink></li>
 
                     {/* focus--------- */}

@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { beautyArray } from '../dataSources/beauty.js'
+import SaveComments from './Comments.jsx'
 
-export default function Music (){
+export default function Beauty (){
 
     
 
@@ -26,10 +27,11 @@ export default function Music (){
                 {/* <SaveComments/> */}
             </div>}
             <ul> 
-            {postLimit.map(article => <li onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}
+            {postLimit.map(article => <li className="moreArticleList" onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}
             </ul>
             
             </div>
+            <SaveComments posts={displayPost}/>
         </div>
     )
 }   
