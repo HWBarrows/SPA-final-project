@@ -32,7 +32,7 @@ export default function MentalHealth(){
                                         </div>
             </div>}
             <ul>
-            {articleLimit.map((article,i) => <li onClick={(e)=>setDisplayArticle(article)} key={i}>
+            {articleLimit.map((article,i) => <li className="moreArticleList" onClick={(e)=>setDisplayArticle(article)} key={i}>
                 {article.title}
                 </li>)}
             </ul>

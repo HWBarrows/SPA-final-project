@@ -6,27 +6,20 @@ import { useContext, useState } from 'react'
 export default function SaveComments(props){
 
     const [profile, setProfile ] = useContext(ProfileContext)
-    const [ arrayOfComments, setArrayOfComments ] = useState([])
 
-    // const [ newComment, setNewComment ] = useState("")
-
-    //save comment array of objects to local storage.
-    
-    
+        
     const [userComments, setUserComments] = useState({
-       
         user: !profile? "" : profile.login.username,
+        userPic: !profile? "" : profile.picture.thumbnail,
         article:"",
         content:""
     });
 
-    //const localStored = localStorage.setItem( "comments", JSON.stringify(userComments))
  
     let fetchedComments = localStorage.getItem("comments")
-    const displayComments = [JSON.parse(fetchedComments)]
+    const displayComments = JSON.parse(fetchedComments)
     console.log(displayComments);
-    
-
+    let array = displayComments ? [...displayComments] : []
 
     
     const handleOnChange = (e)=> {
@@ -40,39 +33,27 @@ export default function SaveComments(props){
         if (!profile){
         alert("Please login to comment")
         }
-
-        displayComments.push(userComments)
-        // fetchedComments.push(preppedData)
-        profile && userComments.content && localStorage.setItem("comments", JSON.stringify(displayComments))
+        profile && userComments.content && array.push(userComments)
+        localStorage.setItem("comments", JSON.stringify(array))
+        setUserComments(()=> ({
+            ...userComments, content:''
+       }))
     }
 
-    // const addToArray =(e)=> {
-    //     e.preventDefault()
-    //     if (!profile){
-    //     alert("Please login to comment")
-    //     }
-    //     // profile && userComments.content && setArrayOfComments([...arrayOfComments, userComments])
-    //     // setUserComments(()=> ({
-    //     //     ...userComments, content:''
-    //     // }))
-        
-    //     // console.log(arrayOfComments);
-    //     localStorage.setItem("comments", JSON.stringify(arrayOfComments))
-    // }
-
-    // const displayArray = displayComments.filter(item => item.article === props.posts)
-    //console.log(displayArray);
-    return (
-        <div>
-            <form>
-            <input type="text" value={userComments.content} onChange={handleOnChange}/>
-            <button type="submit" onClick={addToStorage}>I submit</button>
-            </form>
-        
-             {/* {displayComments.map((item, index) => <li key={index}>{item.user}, {item.content}</li>)}
-         */}
-            {/* {arrayOfComments.map((item, index)=> <li key={index}>{item.user}, {item.content}</li>)} */}
+    
+            return (
+                <div className="commentWrapper">
+                    <h2>Share your thoughts</h2>
+                    <form>
+                    <input type="text" value={userComments.content} onChange={handleOnChange}/>
+                    <button className="publishComment" type="submit" onClick={addToStorage}>Publish</button>
+                    </form>
             
-        </div>
-    )
+                    {displayComments && array.filter(item => item.article === props.posts).map((item, index) => (
+                    <li className="commentList" key={index}><div><div className="avatar" style={{backgroundImage:`url(${item.userPic})`}}></div><h3>{item.user}</h3> <p>{item.content}</p></div>
+                    </li>))}
+                    
+                </div>
+            )
+    
 }

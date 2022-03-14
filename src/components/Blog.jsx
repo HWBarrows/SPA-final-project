@@ -30,7 +30,7 @@ export default function Blog (){
                 {/* <SaveComments/> */}
             </div>}
             <ul> 
-            {postLimit.map(article => <li onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}
+            {postLimit.map(article => <li className="moreArticleList" onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}
             </ul>
             
             </div>
