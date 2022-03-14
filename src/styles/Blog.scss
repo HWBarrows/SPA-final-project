@@ -1,5 +1,73 @@
-.blogPhoto {
-    height: 55vh;
-    width: 85vw;
-    background-size: cover;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dancing+Script&display=swap');
+
+.blogWrapper {
+    //border: 1px solid yellowgreen;
+    background-color: whitesmoke;
+    font-family: 'Cormorant Garamond', serif;
+    color: gray;
+    ul{
+        width:20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 90%;
+        // background-color: orange;
+        padding: 0%;
+    }
+
+    li{
+        
+        height: 25%;
+        margin-right: 15px;
+        overflow: hidden;
+        cursor: pointer;
+        padding: 5px;
+        text-align: justify;
+        font-size: 1.2em;
+        // background-color: lightgray;
+        border-bottom: 1px dotted lightgray ;
+
+        &:hover{
+            background-color: #EB7462; 
+            color: whitesmoke;
+            border-radius: 2px;
+        }
+    }
+}
+
+.flexWrapper {
+    padding-top: 1em;
+    width: 100%;
+    height:85vh;
+    display: flex;
+    align-items:center;
+}
+
+.blogStyles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 95%;
+    padding-left: 1em;
+    // padding-right: 1em;
+    // padding-bottom: .5em;
+    
+    h3{
+        padding: 0.5em 0;
+        font-size: 2em;
+        text-align: center;
+  
+    }
+
+    .blogPhoto {
+        height: 65vh;
+        width: 97%;
+        background-color: black;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+}
+
 }
