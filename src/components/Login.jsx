@@ -33,8 +33,6 @@ export default function Login() {
   function submitLogin(e) {
     e.preventDefault();
 
-    
-
     //Can use to confirm checkIfUserExist is truly empty
     //if (array[index] != null) {
     // The == and != operators consider null equal to only null or undefined
@@ -55,76 +53,59 @@ export default function Login() {
 
   return (
     // <div className="loginWrapper">
-     <>
+    <>
       {(() => {
         if (isLoggedIn) {
           return <UserAccount />;
         }
-        if (showSignUpForm) {
-          return <SignUp showSignUpForm={showSignUpForm} setShowSignUpForm={setShowSignUpForm} />;
-        }
+  
         return (
           <div className="loginWrapper">
             <div className="imgWrapper"></div>
+            {showSignUpForm && (
+              <SignUp
+                showSignUpForm={showSignUpForm}
+                setShowSignUpForm={setShowSignUpForm}
+              
+              />
+            )}
 
-            <div className="loginForm">
-              <h2>Log In</h2>
-              {/* 1st one */}
-              <div>
+            {!showSignUpForm && (
+              <div className="loginForm">
+                <h3>Log In</h3>
+
                 <input
+                  className="loginInput"
                   onChange={checkUserName}
                   type="text"
-                  placeholder="Type your user name here"
+                  placeholder="Enter your username"
                 ></input>
-              </div>
 
-              {/* <div onChange={checkUserName}
-                  type="text"
-                  placeholder="Type your user name here">
-              </div> */}
-
-              {/* last one */}
-                {/* <input style={{margin:"10px", width:"50%", height:"7%", border:"none", padding:"5px", borderRadius: "30px", textAlign: "center"}}
-                  onChange={checkUserName}
-                  type="text"
-                  placeholder="Type your user name here"
-                ></input> */}
-              
-              {/* 1st one */}
-              <div className="passwordField">
                 <input
+                  className="loginInput"
                   onChange={checkPassword}
                   type={show ? "text" : "password"}
-                  placeholder="Type your password here"
+                  placeholder="Enter your password"
                 ></input>
-                <FaEye onMouseDown={() => setShow(!show)} />
-              </div>
+                <span className="eyeForLogin">
+                  <FaEye onMouseDown={() => setShow(!show)} />
+                </span>
 
-              
-                {/* <input
-                  onChange={checkPassword}
-                  type={show ? "text" : "password"}
-                  placeholder="Type your password here"
-                ></input>
-                <FaEye onMouseDown={() => setShow(!show)} /> */}
-                
+                {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
 
-              {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
-              
                 <button type="submit" onClick={submitLogin}>
                   Log In
                 </button>
-              
 
                 <a onClick={() => setShowSignUpForm(true)}>
                   New User? Sign up here{" "}
                 </a>
-             
-            </div>
+              </div>
+            )}
           </div>
         );
       })()}
-      </>
+    </>
     // </div>
   );
 }

@@ -53,8 +53,9 @@ const FriendList = () => {
 
                             </li>)}
                         </ul>
-                        {friendsToChat.map((friend)=> <ChatBox name={friend.name.first} />)}
-                        
+                        <div style={{display:"flex", flexDirection:"row"}} className='chatContainerArea'>
+                        {friendsToChat.map((friend,i)=> <ChatBox key={i} name={friend.name.first} />)}
+                        </div>
                     </div>}
 
 
