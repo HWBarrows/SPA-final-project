@@ -14,58 +14,49 @@ export default function Login() {
   const [data, setData] = useState({ userName: "", password: "" });
   const [showSignUpForm, setShowSignUpForm] = useState(false);
   const [profile, setProfile] = useContext(ProfileContext);
-  const [loginAttempt, setLoginAttempt] = useState(false);
-  const [isLoginDetailNotValid, setIsLoginDetailNotValid] = useState(false);
-  const [isPasswordThere, setIsPasswordThere] = useState(false)
+  const [isUserNameNotValid, setIsUserNameNotValid] = useState(false);
+  const [isPasswordNotValid, setIsPasswordNotValid] = useState(false);
+
   // console.log(JSON.stringify(users.slice(0,20)));
 
-  // console.log(users);
-  //setUsers(...users, {test:"user"})
-  // console.log(users[0].login.password);
-  // console.log(users[0].login.username);
-
-  function checkUserName(e) {
+  function saveEnteredUserName(e) {
     setData({ ...data, userName: e.target.value });
   }
 
-  function checkPassword(e) {
+  function saveEnteredPassword(e) {
     setData({ ...data, password: e.target.value });
-    setIsPasswordThere(!isPasswordThere);
   }
 
   function submitLogin(e) {
     e.preventDefault();
-    //Can use to confirm checkIfUserExist is truly empty
-    //if (array[index] != null) {
-    // The == and != operators consider null equal to only null or undefined
-    //}
-
-    const checkIfUserExist = users.filter(
-      (user) =>
-        user.login.username === data.userName &&
-        user.login.password === data.password
-    ); 
-
-    if (checkIfUserExist.length == 0 ){
-      setIsLoginDetailNotValid(true)
+    if (data.userName == "" && data.password == ""){
+      return;
     }
 
-    checkIfUserExist[0] != null && setProfile(...checkIfUserExist);
-    checkIfUserExist[0] != null && setIsLoggedIn(true);
-    checkIfUserExist[0] == null && setLoginAttempt(true);
-    // console.log(checkIfUserExist);
+    const user = users.find((user) => user.login.username === data.userName);
+
+    if (!user) {
+      setIsUserNameNotValid(true);
+      setIsPasswordNotValid(true);
+      return;
+    }
+    if (user.login.password != data.password) {
+      setIsUserNameNotValid(false);
+      setIsPasswordNotValid(true);
+      return;
+    }
+
+    setProfile(user);
+    setIsLoggedIn(true);
   }
 
-  console.log(users);
-
   return (
-    // <div className="loginWrapper">
     <>
       {(() => {
         if (isLoggedIn) {
           return <UserAccount />;
         }
-  
+
         return (
           <div className="loginWrapper">
             <div className="imgWrapper"></div>
@@ -73,7 +64,6 @@ export default function Login() {
               <SignUp
                 showSignUpForm={showSignUpForm}
                 setShowSignUpForm={setShowSignUpForm}
-              
               />
             )}
 
@@ -83,23 +73,26 @@ export default function Login() {
 
                 <input
                   className="loginInput"
-                  onChange={checkUserName}
+                  onChange={saveEnteredUserName}
                   type="text"
                   placeholder="Enter your username"
                 ></input>
 
-
                 <input
                   className="loginInput"
-                  onChange={checkPassword}
+                  onChange={saveEnteredPassword}
                   type={show ? "text" : "password"}
                   placeholder="Enter your password"
-                ></input> 
-                
+                ></input>
+
                 <span className="eyeForLogin">
-                  {isPasswordThere && <FaEye onMouseDown={() => setShow(!show)} />}
+                  {data.password && (
+                    <FaEye onMouseDown={() => setShow(!show)} />
+                  )}
                 </span>
-                <p style={{fontSize:"13.33px"}}>{isLoginDetailNotValid && "your username/password is not correct, try again!"}</p>
+
+                {isUserNameNotValid && <p>username not valid</p>}
+                {isPasswordNotValid && <p>password not valid</p>}
 
                 {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
 
@@ -116,6 +109,5 @@ export default function Login() {
         );
       })()}
     </>
-    // </div>
   );
 }

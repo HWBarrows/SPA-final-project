@@ -11,14 +11,18 @@ const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
   const [show, setShow] = useState(false)
   const [profile, setProfile] = useContext(ProfileContext);
   const [data, setData] = useState({});
-  
-
+  const [isPasswordValid, setIsPasswordValid] = useState(true)
   const [isUserRegistered, setIsUserRegistered] = useState(false);
 
   function signUp(e) {
     // take in the new username and password in a new-user object, and create a new user profile.
     // console.log(users);
     e.preventDefault();
+    if(data.password.length < 8){
+      setIsPasswordValid(false);
+      return;
+    }
+
 
     const userObj = {
       login: {
@@ -33,9 +37,6 @@ const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
       email: data.email,
 
       picture: {
-        // medium: "http://www.formasdigitales.mx/images/client.png",
-        // large: "http://www.formasdigitales.mx/images/client.png",
-        // thumbnail: "http://www.formasdigitales.mx/images/client.png"
         medium: astro,
         large: astro,
         thumbnail: astro
@@ -47,11 +48,8 @@ const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
     if (Object.keys(data).length > 0) {
       setIsUserRegistered(true);
       setProfile(userObj);
-      // setShowSignUpForm(false)
     }
   }
-
-
 
   return (
     <>
@@ -97,9 +95,10 @@ const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
           placeholder="password"
         />
         <span className="eyeForSignUp">
-        <FaEye onClick={() => setShow(!show)} />
+        {data.password && <FaEye onClick={() => setShow(!show)} />}
         </span>
-
+        
+        {!isPasswordValid && <p>Password must contain 8 characters!</p>}
         <button className="signUpBtn" type="submit" onClick={signUp}>
           Sign up
         </button>
