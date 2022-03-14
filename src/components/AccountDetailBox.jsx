@@ -2,19 +2,21 @@ import React from 'react'
 import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ProfileContext } from '../contexts/ProfileContext.jsx'
+import '../styles/AccountDetailBox.scss'
 
 
-const AccountDetailBox = () => {
-    const [profile, setProfile] = useContext(ProfileContext)
+const AccountDetailBox = ({setDisplayAccountBox}) => {
+    const [profile, setProfile] = useContext(ProfileContext);
+
+    console.log(profile);
 
   return (
-        // profile  cha... 
-        <ul>
-            <li>{profile.login.username}</li>
-            <li><NavLink to="userInfo">My Profile
+        <ul className='accountBox'>
+            <li>Hi {profile.login.username}</li>
+            <li onClick={()=>{setDisplayAccountBox(false)}}><NavLink to="userInfo">My Profile
                 </NavLink>
             </li>
-            <li><a style={{cursor:"pointer"}} onClick={()=> { setProfile(false) } }>Log out</a></li>
+            <li><a style={{cursor:"pointer"}} onClick={()=> { setProfile(false) && setDisplayAccountBox(false)} }>Log out</a></li>
         </ul>
 
 

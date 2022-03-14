@@ -37,15 +37,14 @@ const Nav = () => {
                     {profile && <div className="homeProfile">
                         {/* <p>Account</p> */}
                         <div className="profilePic" onClick={()=>setDisplayAccountBox(!displayAccountBox)} style={{backgroundImage:`url(${profile.picture.thumbnail})`}}></div>
-                        {displayAccountBox && <AccountDetailBox /> }
                         </div>
-                        }  
+                        }
+                        {profile && displayAccountBox &&  <AccountDetailBox  setDisplayAccountBox={setDisplayAccountBox} /> }  
                     </li>
-                    <li></li>
-                </ul>
+                </ul> 
                 
                 <OurRoutes />
-
+                
 
 
 

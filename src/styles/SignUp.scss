@@ -11,7 +11,6 @@
         height: 60%;
         margin: 2px;
         background-color: white;
-        position: relative;
         text-align: start;
         outline: #869cc5;
         border-radius: 30px;
@@ -29,11 +28,3 @@
 
 }
 
-.eyeForSignUp {
-
-    position: absolute;
-    right: 20%;
-    bottom: 50%;
-    transform: translate(10%, 105%);
-    font-size: 13.33px;
-}

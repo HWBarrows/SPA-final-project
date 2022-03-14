@@ -1,0 +1,24 @@
+.accountBox{
+    height: 100px;
+    width: 200px;
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: translate(-31%, 70%);
+
+        li{
+            color: grey;
+            border-bottom: 1px solid grey;
+        }
+        a{
+            color: grey;
+        }
+
+
+}
