@@ -11,6 +11,7 @@ const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
   const [show, setShow] = useState(false)
   const [profile, setProfile] = useContext(ProfileContext);
   const [data, setData] = useState({});
+  
 
   const [isUserRegistered, setIsUserRegistered] = useState(false);
 

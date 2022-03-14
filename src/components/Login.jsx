@@ -15,6 +15,8 @@ export default function Login() {
   const [showSignUpForm, setShowSignUpForm] = useState(false);
   const [profile, setProfile] = useContext(ProfileContext);
   const [loginAttempt, setLoginAttempt] = useState(false);
+  const [isLoginDetailNotValid, setIsLoginDetailNotValid] = useState(false);
+  const [isPasswordThere, setIsPasswordThere] = useState(false)
   // console.log(JSON.stringify(users.slice(0,20)));
 
   // console.log(users);
@@ -28,11 +30,11 @@ export default function Login() {
 
   function checkPassword(e) {
     setData({ ...data, password: e.target.value });
+    setIsPasswordThere(!isPasswordThere);
   }
 
   function submitLogin(e) {
     e.preventDefault();
-
     //Can use to confirm checkIfUserExist is truly empty
     //if (array[index] != null) {
     // The == and != operators consider null equal to only null or undefined
@@ -42,7 +44,12 @@ export default function Login() {
       (user) =>
         user.login.username === data.userName &&
         user.login.password === data.password
-    );
+    ); 
+
+    if (checkIfUserExist.length == 0 ){
+      setIsLoginDetailNotValid(true)
+    }
+
     checkIfUserExist[0] != null && setProfile(...checkIfUserExist);
     checkIfUserExist[0] != null && setIsLoggedIn(true);
     checkIfUserExist[0] == null && setLoginAttempt(true);
@@ -81,15 +88,18 @@ export default function Login() {
                   placeholder="Enter your username"
                 ></input>
 
+
                 <input
                   className="loginInput"
                   onChange={checkPassword}
                   type={show ? "text" : "password"}
                   placeholder="Enter your password"
-                ></input>
+                ></input> 
+                
                 <span className="eyeForLogin">
-                  <FaEye onMouseDown={() => setShow(!show)} />
+                  {isPasswordThere && <FaEye onMouseDown={() => setShow(!show)} />}
                 </span>
+                <p style={{fontSize:"13.33px"}}>{isLoginDetailNotValid && "your username/password is not correct, try again!"}</p>
 
                 {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
 
