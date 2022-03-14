@@ -20,6 +20,14 @@ export default function SaveComments(props){
         content:""
     });
 
+    //const localStored = localStorage.setItem( "comments", JSON.stringify(userComments))
+ 
+    let fetchedComments = localStorage.getItem("comments")
+    const displayComments = [JSON.parse(fetchedComments)]
+    console.log(displayComments);
+    
+
+
     
     const handleOnChange = (e)=> {
         setUserComments(()=> ({
@@ -27,30 +35,42 @@ export default function SaveComments(props){
         }))
     }
 
-    const addToArray =(e)=> {
+    const addToStorage = (e) => {
         e.preventDefault()
         if (!profile){
         alert("Please login to comment")
         }
-        profile && userComments.content && setArrayOfComments([...arrayOfComments, userComments])
-        setUserComments(()=> ({
-            ...userComments, content:''
-        }))
-        
-        console.log(arrayOfComments);
+
+        displayComments.push(userComments)
+        // fetchedComments.push(preppedData)
+        profile && userComments.content && localStorage.setItem("comments", JSON.stringify(displayComments))
     }
 
-    const displayArray = arrayOfComments.filter(item => item.article === props.posts)
-    console.log(displayArray);
+    // const addToArray =(e)=> {
+    //     e.preventDefault()
+    //     if (!profile){
+    //     alert("Please login to comment")
+    //     }
+    //     // profile && userComments.content && setArrayOfComments([...arrayOfComments, userComments])
+    //     // setUserComments(()=> ({
+    //     //     ...userComments, content:''
+    //     // }))
+        
+    //     // console.log(arrayOfComments);
+    //     localStorage.setItem("comments", JSON.stringify(arrayOfComments))
+    // }
+
+    // const displayArray = displayComments.filter(item => item.article === props.posts)
+    //console.log(displayArray);
     return (
         <div>
             <form>
             <input type="text" value={userComments.content} onChange={handleOnChange}/>
-            <button type="submit" onClick={addToArray}>I submit</button>
+            <button type="submit" onClick={addToStorage}>I submit</button>
             </form>
         
-             {displayArray.map((item, index) => <li key={index}>{item.user}, {item.content}</li>)}
-        
+             {/* {displayComments.map((item, index) => <li key={index}>{item.user}, {item.content}</li>)}
+         */}
             {/* {arrayOfComments.map((item, index)=> <li key={index}>{item.user}, {item.content}</li>)} */}
             
         </div>
