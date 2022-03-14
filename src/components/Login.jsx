@@ -3,7 +3,6 @@ import { UserContext } from "../contexts/UserContext";
 import { FaEye } from "react-icons/fa";
 import UserAccount from "./UserAccount";
 import { ProfileContext } from "../contexts/ProfileContext";
-import { NavLink } from "react-router-dom";
 import SignUp from "./SignUp";
 import "../styles/Login.scss";
 
@@ -78,23 +77,22 @@ export default function Login() {
                   placeholder="Enter your username"
                 ></input>
 
-                <input
-                  className="loginInput"
+                <div className= "loginInput passwordStyleDiv">
+                  <input className="passwordStyleInput"
+                  
+                  
                   onChange={saveEnteredPassword}
                   type={show ? "text" : "password"}
                   placeholder="Enter your password"
-                ></input>
+                  ></input>
 
-                <span className="eyeForLogin">
+                  <span className="eyeStyling">
                   {data.password && (
                     <FaEye onMouseDown={() => setShow(!show)} />
                   )}
-                </span>
-
-                {isUserNameNotValid && <p>username not valid</p>}
-                {isPasswordNotValid && <p>password not valid</p>}
-
-                {/* <button type='submit' onClick={submitLogin}>{ !isLoggedIn && !loginAttempt ? "login" : "Sign Up"}</button>     */}
+                  </span>
+                </div>
+                
 
                 <button type="submit" onClick={submitLogin}>
                   Log In
@@ -103,7 +101,10 @@ export default function Login() {
                 <a onClick={() => setShowSignUpForm(true)}>
                   New User? Sign up here{" "}
                 </a>
+                {isUserNameNotValid && <p>username not valid</p>}
+                {isPasswordNotValid && <p>password not valid</p>}
               </div>
+             
             )}
           </div>
         );

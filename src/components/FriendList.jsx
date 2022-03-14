@@ -6,31 +6,31 @@ import ChatBox from './ChatBox.jsx'
 const FriendList = () => {
     const [users, setUsers] = useContext(UserContext)
     const [profile] = useContext(ProfileContext)
-    const [friendsToChat, setFriendsToChat] = useState([])
+    // const [friendsToChat, setFriendsToChat] = useState([])
  
     const friends = users.slice(5,10) //.sort(() => Math.random() - Math.random()).slice(0, 5)
 
     
 
-    function openChatBox(friend){
+    // function openChatBox(friend){
 
-        // if that friend already exists on the array, dont keep on adding it double triple times. 
-        // console.log(friendsToChat);
-        // console.log(friend);
-        const existingFriend = friendsToChat.find((item) => item.email === friend.email)
-        // "friend"
+    //     // if that friend already exists on the array, dont keep on adding it double triple times. 
+    //     // console.log(friendsToChat);
+    //     // console.log(friend);
+    //     const existingFriend = friendsToChat.find((item) => item.email === friend.email)
+    //     // "friend"
 
-        // if exisitingFriend { return }
+    //     // if exisitingFriend { return }
         
-        if(!existingFriend){
-        setFriendsToChat([...friendsToChat, friend])
-        }
-        // ["monika ghimire", "dipesh gatuam"]
+    //     if(!existingFriend){
+    //     setFriendsToChat([...friendsToChat, friend])
+    //     }
+    //     // ["monika ghimire", "dipesh gatuam"]
 
-        // e.target.innerText
+    //     // e.target.innerText
  
 
-    }
+    // }
 
     
     
@@ -53,9 +53,9 @@ const FriendList = () => {
 
                             </li>)}
                         </ul>
-                        <div style={{display:"flex", flexDirection:"row"}} className='chatContainerArea'>
+                        {/* <div style={{display:"flex", flexDirection:"row"}} className='chatContainerArea'>
                         {friendsToChat.map((friend,i)=> <ChatBox key={i} name={friend.name.first} />)}
-                        </div>
+                        </div> */}
                     </div>}
 
 

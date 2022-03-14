@@ -87,22 +87,25 @@ const SignUp = ({ showSignUpForm, setShowSignUpForm }) => {
           placeholder="username"
         />
        
-        <input className="loginInput"
+       <div className="loginInput passwordStyleDiv">
+        <input 
+        className="passwordStyleInput"
           onChange={(e) => {
             setData({ ...data, password: e.target.value });
           }}
           type={show ? "text" : "password"}
           placeholder="password"
         />
-        <span className="eyeForSignUp">
+        <span className="eyeStyling">
         {data.password && <FaEye onClick={() => setShow(!show)} />}
         </span>
-        
-        {!isPasswordValid && <p>Password must contain 8 characters!</p>}
+        </div>
+
         <button className="signUpBtn" type="submit" onClick={signUp}>
           Sign up
         </button>
         <a onClick={() => setShowSignUpForm(false)}>Go back to Login </a>
+        {!isPasswordValid && <p>Password must contain 8 characters!</p>}
       </div>
     </>
   );

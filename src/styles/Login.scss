@@ -39,7 +39,6 @@
             height: 8%;
             margin: 1em;
             background-color: white;
-            position: relative;
             text-align: start;
             outline: #869cc5;
             border-radius: 30px;
@@ -62,11 +61,25 @@
             font-size: 1em;
         }
 
-        .eyeForLogin{
-            position: absolute;
-            right: 20%;
-            transform: translate(0, 48%);
-            font-size: 13.33px;
+        .passwordStyleDiv{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+                .passwordStyleInput{
+                    height: 90%;
+                    width: 90%;
+                    border: none;
+                    border-radius: 30px;
+                    outline: none;
+                    box-shadow: none;
+                }
+
+                .eyeStyling{
+                    // background-color: #ee9038;
+                    padding-right: 1em;
+                }
+
         }
 
 
