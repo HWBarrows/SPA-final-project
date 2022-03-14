@@ -4,10 +4,8 @@
 .moreContWrapper {
     //border: 1px solid yellowgreen;
     background-color: whitesmoke;
-
     font-family: 'Cormorant Garamond', serif;
     color: gray;
-
    
     ul{
         width:20%;
@@ -19,7 +17,7 @@
         padding: 0%;
     }
 
-    li{
+    .moreArticleList{
         
         height: 20%;
         margin-right: 15px;
@@ -71,6 +69,47 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+    }
+
 }
 
+.commentWrapper {
+    //border: 1px solid fuchsia;
+    margin:1em;
+    margin-left: 2em;
+    
+    input {
+        border: none;
+        outline: none;
+        margin:1em;
+        width:60%;
+    }
+
+    .commentList {
+        width:75%;
+        list-style: none;
+        border-bottom: 1px dotted lightgray ;
+    }
+   
+}
+
+.publishComment {
+    background-color: #869cc5;
+    border: none;
+    width: 10vw;
+    border-radius: 30px;
+    color:white;
+
+    &:hover{
+        background-color: #EB7462; 
+        color: whitesmoke;
+        
+    }
+}
+
+.avatar {
+    height:50px;
+    width:50px;
+    background-size: cover;
+    border-radius: 50%;
 }

@@ -6,10 +6,9 @@
 
 .homeWrapper {
     margin: 0;
-    //border: 2px solid fuchsia;
-    background-color: whitesmoke;
-
-       
+    font-family: 'Cormorant Garamond', serif;
+    color: rgb(93, 92, 92);
+    background-color: whitesmoke;   
 }
 
 .homeHeading {
@@ -29,19 +28,37 @@
     .logo{
         background-image: url(./light.png);
         background-size: cover;
-        height: 100px;
+        height: 11vh;
         width: 100px;
-
     }
+    
 
     li {
     display: flex;
     align-items: center;
+    font-family: 'Karla', sans-serif;
+    font-size: 1.25rem;
+    //border:1px solid fuchsia;
+        &:nth-child(1){
+            padding: 0;
+            box-sizing: border-box;
+            :hover{
+            background-color: #869CC5;
+            }
+        }
     }
 
     a {
         text-decoration: none;
         color: #E9FBFF;
+        padding:5px;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #E9FBFF;
+            color: #EB7462; 
+            height: 100%;
+        }
     }
 }
 
@@ -86,10 +103,11 @@
 .cute {
     padding-left: .5em;
     padding-right: .5em;
+    margin-bottom: 1em;
 
         .cutePhoto{
-            background-image: url("https://www.boredpanda.com/blog/wp-content/uuuploads/cute-baby-animals/cute-baby-animals-2.jpg");
-            background-position: top;
+            //background-image: url("https://www.boredpanda.com/blog/wp-content/uuuploads/cute-baby-animals/cute-baby-animals-2.jpg");
+            background-position: center;
             background-size:cover;
             height: 30vh;
             width: 100%;
@@ -106,12 +124,12 @@
 
 .advicePhoto {
     //border: 1px solid fuchsia;
-    background-image: url('./aunties.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    //background-image: url('./aunties.png');
+    background-size: cover;
     height: 22.5vh;
     width: 95%;
     border-radius: 10px;
+    margin-bottom: 1em;
     margin-left: .5em;
 }
 
@@ -125,7 +143,17 @@
     width:100%;
     display: flex;
     justify-content: space-evenly;
-       
+
+    a {
+        color: rgb(93, 92, 92);
+        text-decoration: none;
+    }
+      
+    h3{
+        &:hover {
+            color: #EB7462; 
+        }
+    }
 }
 
 .banner {
@@ -147,3 +175,5 @@
     
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Karla:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dancing+Script&display=swap');
