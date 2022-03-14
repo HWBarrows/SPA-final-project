@@ -3,6 +3,8 @@ import { useContext, useState } from "react"
 import '../styles/Home.scss'
 import AccountDetailBox from "./AccountDetailBox.jsx"
 import Nav from "./Nav.jsx"
+import {mentalHealthArticles} from '../dataSources/mentalHealth.js'
+import { beautyArray } from '../dataSources/beauty.js'
 
 
 
@@ -24,28 +26,28 @@ export default function Home() {
                     <div className="bannerPhoto"></div>
                     <div className="bannerText">
                     <h1> About us</h1>  
-                    <p>Chupa chups liquorice soufflé lollipop croissant marshmallow. Carrot cake jelly chupa chups donut lemon drops. Croissant candy bear claw dessert oat cake cupcake pudding donut danish.</p>  
+                    <p>Meet the creators, Hallie, Melanie, and Monika</p>  
                     </div>
                 </div>
 
                 <div className="sidebar">
-                    <div className="cute">
-                        <div className="cutePhoto"></div>
+                    <NavLink to="beauty"><div className="cute">
+                        <div className="cutePhoto" style={{backgroundImage:`url(${beautyArray[0].urlToImage})`}}></div>
                         <div className="cuteText">
-                        <h3>Eye Bleach</h3>
-                        <p>Cuteness overload, all the time</p>
+                        <h3>{beautyArray[0].title}</h3>
                         </div>
-                    </div>
-                    <div className="advice">
-                        <div className="advicePhoto"></div>
+                    </div></NavLink>
+
+                    <NavLink to="mentalHealth"><div className="advice">
+                        <div className="advicePhoto" style={{backgroundImage:`url(${mentalHealthArticles[0].urlToImage})`}}></div>
                         <div className="adviceText">
-                        <h3>Ask an Auntie</h3>  
-                        <p>Real answers to life's questions</p>  
+                        <h3>{mentalHealthArticles[0].title}</h3>  
+                          
                         </div>
-                    </div>
+                    </div></NavLink>
                 </div>
             </div>
-                    <div className="mergeContainers">
+                    {/* <div className="mergeContainers">
                         <div className="moreCont">
                             <div className="morePhoto"></div>
                             <div className="moreText"></div>
@@ -58,7 +60,7 @@ export default function Home() {
                             <div className="morePhoto"></div>
                             <div className="moreText"></div>    
                         </div>
-                    </div>
+                    </div> */}
                 
                     {/* <Footer/> */}
         </div>
