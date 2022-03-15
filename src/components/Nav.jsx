@@ -20,7 +20,7 @@ const Nav = () => {
                 <ul className="landingList">  
                 
                     <li><NavLink to="home"><div className="logo"></div></NavLink></li>
-               
+                    <li><NavLink to="aboutUs">About Us</NavLink></li>
                     <li><NavLink to="blog">Fashion</NavLink></li>
                     <li><NavLink to="music">Music</NavLink></li>
                     {/* <li><NavLink to="moreContent">More Content</NavLink></li> */}
