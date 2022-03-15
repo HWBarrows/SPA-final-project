@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dancing+Script&family=Lobster+Two:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 .pageWrapper{
     background-color:#869CC5;
 }
@@ -21,7 +23,8 @@
     align-content: center;
     //border: 1px solid yellow;
     height: 10vh;
-
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
     .logo{
         background-image: url(./light.png);
         background-size: cover;
