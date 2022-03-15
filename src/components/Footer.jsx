@@ -18,13 +18,13 @@ export default function Footer (){
     return (
         <div className="footerWrapper">
 
-            <ul>
-                <li><a href={twitter} target="_blank"><FaTwitter color='lightblue' className='icon' /> </a></li>
-                <li> <a href={facebook} target="_blank"><FaFacebookSquare color='blue'/></a></li>
-                <li>   <a href={youtube} target="_blank"><FaYoutubeSquare  color='red'/></a> </li>
-                <li> <a href={instagram} target="_blank">  < FaInstagramSquare color='lilac' /> </a></li>
+            <ul className='footerList'>
+                <li className='listItem'><a href={twitter} target="_blank"><FaTwitter color='#e9fbff' className='icon' /> </a></li>
+                <li className='listItem'> <a href={facebook} target="_blank"><FaFacebookSquare color='#95ccee'/></a></li>
+                <li className='listItem'>   <a href={youtube} target="_blank"><FaYoutubeSquare  color='#e9fbff'/></a> </li>
+                <li className='listItem'> <a href={instagram} target="_blank">  < FaInstagramSquare color='#95ccee' /> </a></li>
             </ul>
-            <h4> <FaCopyright  color='aqua'/> 2022 Hmm</h4>
+            <h4> <FaCopyright  color='#95ccee'/> <span className='footerSpan'>2022 Hmm</span></h4>
         </div>
     )
 }

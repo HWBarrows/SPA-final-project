@@ -9,6 +9,9 @@
    width: 100%;
    font-family: 'Cormorant Garamond', serif;
    margin-top: 23px; 
+ 
+
+
  }
 
 ul{
@@ -21,7 +24,7 @@ ul{
    
     }
 
-    li{
+    .listItem{
        padding:5px
     }
 
@@ -32,5 +35,6 @@ ul{
         
     }
 
-
-
+    .footerSpan{
+        color:#e9fbff;
+    }
