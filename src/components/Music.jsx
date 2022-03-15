@@ -8,7 +8,7 @@ export default function Music (){
 
     
 
-        const [ posts, setPosts ] = useState(5)
+        const [ posts, setPosts ] = useState(4)
         const [ displayPost, setDisplayPost ] = useState("5 Classical Music Albums You Can Listen to Right Now")
         const postLimit = musicArray.filter((item, index)=> index <= posts)
         const currentArticle = postLimit.filter(item=> item.title === displayPost)
@@ -27,13 +27,14 @@ export default function Music (){
                                     <h3>{currentArticle[0].title}</h3>
                                     <p>{currentArticle[0].content}</p>
                                  </div>
-                    <SaveComments posts={displayPost}/>
+                    {/* <SaveComments posts={displayPost}/> */}
                 </div>}
                 <ul> 
-                {postLimit.map((article, index) => <li key={index}onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}
+                {postLimit.map((article, index) => <li className="moreArticleList" key={index}onClick={(e)=> setDisplayPost(e.target.innerText)}>{article.title}</li>)}
                 </ul>
                 
                 </div>
+                <SaveComments posts={displayPost}/>
             </div>
         )
     }   

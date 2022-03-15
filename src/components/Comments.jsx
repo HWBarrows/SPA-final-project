@@ -6,19 +6,20 @@ import { useContext, useState } from 'react'
 export default function SaveComments(props){
 
     const [profile, setProfile ] = useContext(ProfileContext)
-    const [ arrayOfComments, setArrayOfComments ] = useState([])
 
-    // const [ newComment, setNewComment ] = useState("")
-
-    //save comment array of objects to local storage.
-    
-    
+        
     const [userComments, setUserComments] = useState({
-       
         user: !profile? "" : profile.login.username,
+        userPic: !profile? "" : profile.picture.thumbnail,
         article:"",
         content:""
     });
+
+ 
+    let fetchedComments = localStorage.getItem("comments")
+    const displayComments = JSON.parse(fetchedComments)
+    console.log(displayComments);
+    let array = displayComments ? [...displayComments] : []
 
     
     const handleOnChange = (e)=> {
@@ -27,32 +28,32 @@ export default function SaveComments(props){
         }))
     }
 
-    const addToArray =(e)=> {
+    const addToStorage = (e) => {
         e.preventDefault()
         if (!profile){
         alert("Please login to comment")
         }
-        profile && userComments.content && setArrayOfComments([...arrayOfComments, userComments])
+        profile && userComments.content && array.push(userComments)
+        localStorage.setItem("comments", JSON.stringify(array))
         setUserComments(()=> ({
             ...userComments, content:''
-        }))
-        
-        console.log(arrayOfComments);
+       }))
     }
 
-    const displayArray = arrayOfComments.filter(item => item.article === props.posts)
-    console.log(displayArray);
-    return (
-        <div>
-            <form>
-            <input type="text" value={userComments.content} onChange={handleOnChange}/>
-            <button type="submit" onClick={addToArray}>I submit</button>
-            </form>
-        
-             {displayArray.map((item, index) => <li key={index}>{item.user}, {item.content}</li>)}
-        
-            {/* {arrayOfComments.map((item, index)=> <li key={index}>{item.user}, {item.content}</li>)} */}
+    
+            return (
+                <div className="commentWrapper">
+                    <h2>Share your thoughts</h2>
+                    <form>
+                    <input type="text" value={userComments.content} onChange={handleOnChange}/>
+                    <button className="publishComment" type="submit" onClick={addToStorage}>Publish</button>
+                    </form>
             
-        </div>
-    )
+                    {displayComments && array.filter(item => item.article === props.posts).map((item, index) => (
+                    <li className="commentList" key={index}><div><div className="avatar" style={{backgroundImage:`url(${item.userPic})`}}></div><h3>{item.user}</h3> <p>{item.content}</p></div>
+                    </li>))}
+                    
+                </div>
+            )
+    
 }
