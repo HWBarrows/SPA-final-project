@@ -1,8 +1,8 @@
 import { useState } from 'react'
-// import { Link } from 'react-router-dom';
 import {fashionArticles} from '../dataSources/fashionNews.js'
+import SaveComments from "./Comments.jsx"
 import '../styles/Blog.scss'
-// import NewsApi from './NewsApiTest.jsx'
+
 
 // console.log(fashionArticles);
 export default function Blog (){
@@ -34,6 +34,7 @@ export default function Blog (){
             </ul>
             
             </div>
+            <SaveComments posts={displayPost}/>
         </div>
     )
 }

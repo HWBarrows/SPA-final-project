@@ -18,7 +18,7 @@ export default function SaveComments(props){
  
     let fetchedComments = localStorage.getItem("comments")
     const displayComments = JSON.parse(fetchedComments)
-    console.log(displayComments);
+    //console.log(displayComments);
     let array = displayComments ? [...displayComments] : []
 
     
