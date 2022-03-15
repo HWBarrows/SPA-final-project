@@ -24,10 +24,10 @@ export default function Home() {
             <div className="flexContainer">
                 <div className="banner">
                     <div className="bannerPhoto"></div>
-                    <div className="bannerText">
+                    <NavLink to="aboutUs"><div className="bannerText">
                     <h1> About us</h1>  
                     <p>Meet the creators, Hallie, Melanie, and Monika</p>  
-                    </div>
+                    </div></NavLink>
                 </div>
 
                 <div className="sidebar">
